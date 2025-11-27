@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Shanmukha Teja Juttu</title>
+    <meta name="description" content="Machine Learning, Data Visualization, and Programming projects from Georgia Tech MS program">
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧪</text></svg>">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-void: #08090d;
+            --bg-elevated: #0f1117;
+            --bg-card: rgba(17, 19, 27, 0.7);
+            --accent-primary: #06d6a0;
+            --accent-secondary: #3b82f6;
+            --accent-tertiary: #8b5cf6;
+            --accent-glow: rgba(6, 214, 160, 0.15);
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --border-subtle: rgba(148, 163, 184, 0.1);
+            --font-display: 'Syne', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --font-body: 'DM Sans', sans-serif;
+        }
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-void);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Background */
+        .bg-grid {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bg-grid::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: 
+                radial-gradient(circle at 1px 1px, rgba(148, 163, 184, 0.08) 1px, transparent 0);
+            background-size: 40px 40px;
+        }
+
+        .bg-grid::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 80% 50% at 50% 0%, var(--accent-glow), transparent);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(12px);
+            background: rgba(8, 9, 13, 0.8);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: 1.25rem;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--accent-primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-primary);
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+        }
+
+        /* Page Header */
+        .page-header {
+            margin-bottom: 4rem;
+            padding-top: 2rem;
+        }
+
+        .back-link {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--accent-primary);
+        }
+
+        .page-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin-bottom: 1rem;
+        }
+
+        .page-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+        }
+
+        /* Filter Tabs */
+        .filter-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-tab {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 4px;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .filter-tab:hover {
+            border-color: var(--accent-primary);
+            color: var(--text-primary);
+        }
+
+        .filter-tab.active {
+            background: var(--accent-primary);
+            border-color: var(--accent-primary);
+            color: var(--bg-void);
+        }
+
+        .filter-tab .count {
+            margin-left: 0.5rem;
+            opacity: 0.7;
+        }
+
+        /* Category Section */
+        .category-section {
+            margin-bottom: 4rem;
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .category-icon {
+            font-size: 2rem;
+        }
+
+        .category-title {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            font-weight: 700;
+        }
+
+        .category-count {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-left: auto;
+        }
+
+        /* Project Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* Project Card */
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 1.75rem;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-card.ml { --card-accent: #06d6a0; }
+        .project-card.vis { --card-accent: #3b82f6; }
+        .project-card.prog { --card-accent: #8b5cf6; }
+
+        .project-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .project-date {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .project-category {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            padding: 0.25rem 0.6rem;
+            background: rgba(6, 214, 160, 0.1);
+            border: 1px solid var(--card-accent);
+            border-radius: 3px;
+            color: var(--card-accent);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .project-title {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            line-height: 1.3;
+        }
+
+        .project-desc {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 1.25rem;
+            flex-grow: 1;
+        }
+
+        .project-toolkit {
+            margin-bottom: 1.25rem;
+        }
+
+        .toolkit-label {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+        }
+
+        .toolkit-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+
+        .toolkit-tag {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            padding: 0.3rem 0.6rem;
+            background: rgba(148, 163, 184, 0.1);
+            border-radius: 3px;
+            color: var(--text-secondary);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-top: auto;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .project-link {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--accent-primary);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.4rem 0.8rem;
+            border: 1px solid var(--accent-primary);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover {
+            background: var(--accent-primary);
+            color: var(--bg-void);
+        }
+
+        .project-link svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid var(--border-subtle);
+            margin-top: 4rem;
+        }
+
+        footer p {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            main {
+                padding: 6rem 1.5rem 2rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .filter-tabs {
+                gap: 0.5rem;
+            }
+
+            .filter-tab {
+                padding: 0.5rem 1rem;
+                font-size: 0.75rem;
+            }
+        }
+
+        /* Animations */
+        .project-card {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 0.5s ease forwards;
+        }
+
+        .project-card:nth-child(1) { animation-delay: 0.05s; }
+        .project-card:nth-child(2) { animation-delay: 0.1s; }
+        .project-card:nth-child(3) { animation-delay: 0.15s; }
+        .project-card:nth-child(4) { animation-delay: 0.2s; }
+        .project-card:nth-child(5) { animation-delay: 0.25s; }
+        .project-card:nth-child(6) { animation-delay: 0.3s; }
+        .project-card:nth-child(7) { animation-delay: 0.35s; }
+        .project-card:nth-child(8) { animation-delay: 0.4s; }
+        .project-card:nth-child(9) { animation-delay: 0.45s; }
+        .project-card:nth-child(10) { animation-delay: 0.5s; }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Selection */
+        ::selection {
+            background: var(--accent-primary);
+            color: var(--bg-void);
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-void);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border-subtle);
+            border-radius: 4px;
+        }
+
+        /* Hidden class for filtering */
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-grid"></div>
+
+    <nav>
+        <a href="index.html" class="logo">TEJA<span>.</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html#experience">Experience</a></li>
+            <li><a href="index.html#skills">Expertise</a></li>
+            <li><a href="index.html#impact">Impact</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="index.html#contact">Connect</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="page-header">
+            <a href="index.html" class="back-link">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+                Back to Home
+            </a>
+            <h1 class="page-title">Projects</h1>
+            <p class="page-subtitle">Academic and passion projects from Georgia Tech MS program (2020-2022) exploring machine learning, data visualization, and software engineering.</p>
+        </div>
+
+        <div class="filter-tabs">
+            <button class="filter-tab active" data-filter="all">All<span class="count">(20)</span></button>
+            <button class="filter-tab" data-filter="ml">Machine Learning<span class="count">(10)</span></button>
+            <button class="filter-tab" data-filter="vis">Visualization<span class="count">(7)</span></button>
+            <button class="filter-tab" data-filter="prog">Programming<span class="count">(3)</span></button>
+        </div>
+
+        <!-- Machine Learning Projects -->
+        <section class="category-section" data-category="ml">
+            <div class="category-header">
+                <span class="category-icon">🧪</span>
+                <h2 class="category-title">Machine Learning</h2>
+                <span class="category-count">10 projects</span>
+            </div>
+            
+            <div class="projects-grid">
+                <div class="project-card ml" data-type="ml">
+                    <div class="project-meta">
+                        <span class="project-date">Fall 2021</span>
+                        <span class="project-category">Classification</span>
+                    </div>
+                    <h3 class="project-title">Traffic Signs Image Classification</h3>
+                    <p class="project-desc">Multi-class classification of traffic sign images using various ML algorithms aimed at categorization of high impact classes with an accuracy of 93%.</p>
+                    <div class="project-toolkit">
+                        <p class="toolkit-label">Toolkit</p>
+                        <div class="toolkit-tags">
+                            <span class="toolkit-tag">SVM</span>
+                            <span class="toolkit-tag">Naive Bayes</span>
+                            <span class="toolkit-tag">Random Forest</span>
+                            <span class="toolkit-tag">KNN</span>
+                            <span class="toolkit-tag">MLP</span>
+                            <span class="toolkit-tag">PCA</span>
+                            <span class="toolkit-tag">scikit-learn</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card ml" data-type="ml">
+                    <div class="project-meta">
+                        <span class="project-date">Fall 2021</span>
+                        <span class="project-category">Regression</span>
+                    </div>
+                    <h3 class="project-title">Predicting Game Success</h3>
+                    <p class="project-desc">Applying machine learning models to predict new games' success rate in the current market, along with sentiment analysis of user reviews represented in an interactive visualization.</p>
+                    <div class="project-toolkit">
+                        <p class="toolkit-label">Toolkit</p>
+                        <div class="toolkit-tags">
+                            <span class="toolkit-tag">Linear Regression</span>
+                            <span class="toolkit-tag">Poisson</span>
+                            <span class="toolkit-tag">Sentiment Analysis</span>
+                            <span class="toolkit-tag">Python</span>
+                            <span class="toolkit-tag">HTML</span>
+                        </div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/gmadhu89/academic-projects/blob/main/data-visualization-project/poster/" target="_blank" class="project-link">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                            </svg>
+                            View Poster
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card ml" data-type="ml">
+                    <div class="project-meta">
+                        <span class="project-date">Spring 2021</span>
+                        <span class="project-category">Computer Vision</span>
+                    </div>
+                    <h3 class="project-title">Face Recognition using PCA</h3>
+                    <p class="project-desc">Face recognition of subjects by computing top eigen faces from images shot with different expressions.</p>
+                    <div class="project-toolkit">
+                        <p class="toolkit-label">Toolkit</p>
+                        <div class="toolkit-tags">
+                            <span class="toolkit-tag">Python</span>
+                            <span class="toolkit-tag">scikit-learn</span>
+                            <span class="toolkit-tag">PCA</span>
+                            <span class="toolkit-tag">Classification</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card ml" data-type="ml">
+                    <div class="project-meta">
+                        <span class="project-date">Spring 2021</span>
+                        <span class="project-category">Clustering</span>
+                    </div>
+                    <h3 class="project-title">Image Compression</h3>
+                    <p class="project-desc">Performing image compression of multiple image sizes using K-means clustering algorithm implemented from scratch.</p>
+                    <div class="project-toolkit">
+                        <p class="toolkit-label">Toolkit</p>
+                        <div class="toolkit-tags">
+                            <span class="toolkit-tag">Python</span>
+                            <span class="toolkit-tag">K-Means</span>
+                            <span class="toolkit-tag">From Scratch</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card ml" data-type="ml">
+                    <div class="project-meta">
+                        <span class="project-date">Spring 2021</span>
+                        <span class="project-category">Clustering</span>
+                    </div>
+                    <h3 class="project-title">Spectral Clustering</h3>
+                    <p class="project-desc">Experimenting Spectral clustering algorithm with a synthetic dataset to identify non-convex clusters.</p>
+                    <div class="project-toolkit">
+                        <p class="toolkit-label">Toolkit</p>
+                        <div class="toolkit-tags">
+                            <span class="toolkit-tag">Python</span>
+                            <span class="toolkit-tag">Spectral Clustering</span>
+                            <span class="toolkit-tag">scikit-learn</span>
+                        </div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/gmadhu89/academic-projects/tree/main/Machine-Learning/spectral-clustering-tworings" target="_blank" class="project-link">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                            </svg>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card ml" data-type="ml">
+                    <div class="project-meta">
+                        <span class="project-date">Fall 2020</span>
+                        <span class="project-category">Classification</span>
+                    </div>
+                    <h3 class="project-title">Comparing Classifiers</h3>
+                    <p class="project-desc">A comparison of several classifiers in scikit-learn on synthetic datasets to illustrate the nature of decision boundaries of different classifiers.</p>
+                    <div class="project-toolkit">
+                        <p class="toolkit-label">Toolkit</p>
+                        <div class="toolkit-tags">
+                            <span class="toolkit-tag">Naive Bayes</span>
+                            <span class="toolkit-tag">Decision Trees</span>
+                            <span class="toolkit-tag">Random Forest</span>
+                            <span class="toolkit-tag">AdaBoost</span>
+                            <span class="toolkit-tag">Neural Nets</span>
+                            <span class="toolkit-tag">SVM</span>
+                            <span class="toolkit-tag">QDA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card ml" data-type="ml">
+                    <div class="project-meta">
+                        <span class="project-date">Fall 2020</span>
+                        <span class="project-category">Dimensionality Reduction</span>
+                    </div>
+                    <h3 class="project-title">ISOMAP for Dimensionality Reduction</h3>
+                    <p class="project-desc">Implementing the ISOMAP algorithm to obtain a two-dimensional embedding for images corresponding to different poses of the same person and comparing its results with PCA.</p>
+                    <div class="project-toolkit">
+                        <p class="toolkit-label">Toolkit</p>
+                        <div class="toolkit-tags">
+                            <span class="toolkit-tag">Python</span>
+                            <span class="toolkit-tag">ISOMAP</span>
+                            <span class="toolkit-tag">Non-linear DR</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card ml" data-type="ml">
+                    <div class="project-meta">
+                        <span class="project-date">Fall 2020</span>
+                        <span class="project-category">Clustering</span>
+                    </div>
+                    <h3 class="project-title">Clustering Digits</h3>
+                    <p class="project-desc">Applying clustering techniques on hand-written images of digits for unsupervised pattern recognition.</p>
+                    <div class="project-toolkit">
+                        <p class="toolkit-label">Toolkit</p>
+                        <div class="toolkit-tags">
+                            <span class="toolkit-tag">Python</span>
+                            <span class="toolkit-tag">K-Means</span>
+                            <span class="toolkit-tag">MNIST</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card ml" data-type="ml">
+                    <div class="project-meta">
+                        <span class="project-date">Fall 2020</span>
+                        <span class="project-category">Dimensionality Reduction</span>
+                    </div>
+                    <h3 class="project-title">Principal Component Analysis</h3>
+                    <p class="project-desc">Applying PCA on multiple datasets to identify trends, directions, and reduce dimensionality while preserving variance.</p>
+                    <div class="project-toolkit">
+                        <p class="toolkit-label">Toolkit</p>
+                        <div class="toolkit-tags">
+                            <span class="toolkit-tag">Python</span>
+                            <span class="toolkit-tag">PCA</span>
+                            <span class="toolkit-tag">EDA</span>
+                        </div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/gmadhu89/academic-projects/tree/main/Machine-Learning/pca-leaf-data" target="_blank" class="project-link">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                            </svg>
+                            Leaf Data
+                        </a>
+                        <a href="https://github.com/gmadhu89/academic-projects/tree/main/Machine-Learning/pca-food-consumption-europeancountries" target="_blank" class="project-link">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                            </svg>
+                            Food Data
+                        </a>
+                        <a href="https://github.com/gmadhu89/academic-projects/tree/main/Machine-Learning/pca-digits" target="_blank" class="project-link">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                            </svg>
+                            Digits
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card ml" data-type="ml">
+                    <div class="project-meta">
+                        <span class="project-date">Fall 2020</span>
+                        <span class="project-category">Regression</span>
+                    </div>
+                    <h3 class="project-title">Regularization</h3>
+                    <p class="project-desc">Applying Regularization techniques on a Housing dataset to prevent overfitting and improve generalization.</p>
+                    <div class="project-toolkit">
+                        <p class="toolkit-label">Toolkit</p>
+                        <div class="toolkit-tags">
+                            <span class="toolkit-tag">Python</span>
+                            <span class="toolkit-tag">Ridge</span>
+                            <span class="toolkit-tag">Lasso</span>
+                            <span class="toolkit-tag">Regression</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Visualization Projects -->
+        <section class="category-section" data-category="vis">
+            <div class="category-header">
+                <span class="category-icon">📈</span>
+                <h2 class="category-title">Data Visualization</h2>
+                <span class="category-count">7 projects</span>
+            </div>
+            
+            <div class="projects-grid">
+                <div class="project-card vis" data-type="vis">
+                    <div class="project-meta">
+                        <span class="project-date">Spring 2022</span>
+                        <span class="project-category">Big Data</span>
+                    </div>
+                    <h3 class="project-title">NFT Analytics Dashboard</h3>
+                    <p class="project-desc">NFT Big data Analytics & dashboard built on large volumes of Opensea trading data and Twitter sentiment scraping.</p>
+                    <div class="project-toolkit">
+                        <p class="toolkit-label">Toolkit</p>
+                        <div class="toolkit-tags">
+                            <span class="toolkit-tag">D3.js</span>
+                            <span class="toolkit-tag">Django</span>
+                            <span class="toolkit-tag">Python</span>
+                            <span class="toolkit-tag">R</span>
+                            <span class="toolkit-tag">Twitter API</span>
+                        </div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://youtu.be/YBc_D5ybyCo" target="_blank" class="project-link">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                            </svg>
+                            Watch Demo
+                        </a>
+                        <a href="https://drive.google.com/drive/folders/1oXlceMtDPrrwLhfWIw61tbcwqP6sEXKV?usp=sharing" target="_blank" class="project-link">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                            </svg>
+                            Report
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card vis" data-type="vis">
+                    <div class="project-meta">
+                        <span class="project-date">Fall 2021</span>
+                        <span class="project-category">Big Data</span>
+                    </div>
+                    <h3 class="project-title">COVID-19 Big Data Pipeline</h3>
+                    <p class="project-desc">Implementing an end-to-end data pipeline on AWS using real-time streaming, PySpark and HDFS to analyse trends and impacts with COVID-19 dataset.</p>
+                    <div class="project-toolkit">
+                        <p class="toolkit-label">Toolkit</p>
+                        <div class="toolkit-tags">
+                            <span class="toolkit-tag">HDFS</span>
+                            <span class="toolkit-tag">PySpark</span>
+                            <span class="toolkit-tag">AWS</span>
+                            <span class="toolkit-tag">Kafka</span>
+                            <span class="toolkit-tag">NiFi</span>
+                            <span class="toolkit-tag">Tableau</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card vis" data-type="vis">
+                    <div class="project-meta">
+                        <span class="project-date">Spring 2021</span>
+                        <span class="project-category">Interactive</span>
+                    </div>
+                    <h3 class="project-title">Choropleth Visualization</h3>
+                    <p class="project-desc">Interactive Map visualization of ratings of board games specific to each region.</p>
+                    <div class="project-toolkit">
+                        <p class="toolkit-label">Toolkit</p>
+                        <div class="toolkit-tags">
+                            <span class="toolkit-tag">HTML</span>
+                            <span class="toolkit-tag">D3.js</span>
+                            <span class="toolkit-tag">GeoJSON</span>
+                        </div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://gmadhu89.github.io/Map_Vis/" target="_blank" class="project-link">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                            </svg>
+                            Live Demo
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card vis" data-type="vis">
+                    <div class="project-meta">
+                        <span class="project-date">Spring 2021</span>
+                        <span class="project-category">Network</span>
+                    </div>
+                    <h3 class="project-title">Co-Actor Network Visualization</h3>
+                    <p class="project-desc">Building a network graph of co-actors and visualizing them as an interactive graph.</p>
+                    <div class="project-toolkit">
+                        <p class="toolkit-label">Toolkit</p>
+                        <div class="toolkit-tags">
+                            <span class="toolkit-tag">Argo-lite</span>
+                            <span class="toolkit-tag">Python</span>
+                            <span class="toolkit-tag">Network Analysis</span>
+                        </div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://poloclub.github.io/argo-graph-lite/#fb015d5e-4934-4f3e-83be-73e899e9cdd1" target="_blank" class="project-link">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                            </svg>
+                            Explore Graph
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card vis" data-type="vis">
+                    <div class="project-meta">
+                        <span class="project-date">Fall 2020</span>
+                        <span class="project-category">Network</span>
+                    </div>
+                    <h3 class="project-title">Force Directed Graph</h3>
+                    <p class="project-desc">A network visualization identifying similarities between board games using force-directed simulations.</p>
+                    <div class="project-toolkit">
+                        <p class="toolkit-label">Toolkit</p>
+                        <div class="toolkit-tags">
+                            <span class="toolkit-tag">D3.js</span>
+                            <span class="toolkit-tag">Force Simulation</span>
+                        </div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://gmadhu89.github.io/force-directed-graph-d3/" target="_blank" class="project-link">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                            </svg>
+                            Live Demo
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card vis" data-type="vis">
+                    <div class="project-meta">
+                        <span class="project-date">Fall 2020</span>
+                        <span class="project-category">Interactive</span>
+                    </div>
+                    <h3 class="project-title">Interactive Frequency Polygon</h3>
+                    <p class="project-desc">An Interactive frequency polygon chart to visualize a dataset containing list of games, their ratings, and supporting information.</p>
+                    <div class="project-toolkit">
+                        <p class="toolkit-label">Toolkit</p>
+                        <div class="toolkit-tags">
+                            <span class="toolkit-tag">D3.js</span>
+                            <span class="toolkit-tag">Interactive Charts</span>
+                        </div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://gmadhu89.github.io/frequency-polygon/" target="_blank" class="project-link">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                            </svg>
+                            Live Demo
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card vis" data-type="vis">
+                    <div class="project-meta">
+                        <span class="project-date">Fall 2020</span>
+                        <span class="project-category">Charts</span>
+                    </div>
+                    <h3 class="project-title">D3.js Line Chart</h3>
+                    <p class="project-desc">Experimenting different features in D3 line charts for visualizing board game ratings over time.</p>
+                    <div class="project-toolkit">
+                        <p class="toolkit-label">Toolkit</p>
+                        <div class="toolkit-tags">
+                            <span class="toolkit-tag">D3.js</span>
+                            <span class="toolkit-tag">SVG</span>
+                        </div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://gmadhu89.github.io/line-chart-d3/" target="_blank" class="project-link">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                            </svg>
+                            Live Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Programming Projects -->
+        <section class="category-section" data-category="prog">
+            <div class="category-header">
+                <span class="category-icon">💻</span>
+                <h2 class="category-title">Programming</h2>
+                <span class="category-count">3 projects</span>
+            </div>
+            
+            <div class="projects-grid">
+                <div class="project-card prog" data-type="prog">
+                    <div class="project-meta">
+                        <span class="project-date">Spring 2021</span>
+                        <span class="project-category">Game Dev</span>
+                    </div>
+                    <h3 class="project-title">Tic-Tac-Toe</h3>
+                    <p class="project-desc">A classic game of tic-tac-toe implementation using Python with AI opponent options.</p>
+                    <div class="project-toolkit">
+                        <p class="toolkit-label">Toolkit</p>
+                        <div class="toolkit-tags">
+                            <span class="toolkit-tag">Python</span>
+                            <span class="toolkit-tag">Game Logic</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card prog" data-type="prog">
+                    <div class="project-meta">
+                        <span class="project-date">Fall 2020</span>
+                        <span class="project-category">Simulation</span>
+                    </div>
+                    <h3 class="project-title">Gamble Game Simulation</h3>
+                    <p class="project-desc">Implementing a gamble game of die rolls and performing Monte-Carlo simulation and distribution tests.</p>
+                    <div class="project-toolkit">
+                        <p class="toolkit-label">Toolkit</p>
+                        <div class="toolkit-tags">
+                            <span class="toolkit-tag">Python</span>
+                            <span class="toolkit-tag">Monte-Carlo</span>
+                            <span class="toolkit-tag">Probability</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card prog" data-type="prog">
+                    <div class="project-meta">
+                        <span class="project-date">Fall 2020</span>
+                        <span class="project-category">Statistics</span>
+                    </div>
+                    <h3 class="project-title">Fitting Distributions</h3>
+                    <p class="project-desc">Implementing routines to fit random variables to a set of continuous/discrete probability distributions.</p>
+                    <div class="project-toolkit">
+                        <p class="toolkit-label">Toolkit</p>
+                        <div class="toolkit-tags">
+                            <span class="toolkit-tag">Python</span>
+                            <span class="toolkit-tag">Probability</span>
+                            <span class="toolkit-tag">Goodness of Fit</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Built with intention • Georgia Tech MS Projects (2020-2022)</p>
+    </footer>
+
+    <script>
+        // Filter functionality
+        const filterTabs = document.querySelectorAll('.filter-tab');
+        const categorySections = document.querySelectorAll('.category-section');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const filter = tab.dataset.filter;
+                
+                // Update active tab
+                filterTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                
+                // Show/hide sections
+                if (filter === 'all') {
+                    categorySections.forEach(section => section.classList.remove('hidden'));
+                    projectCards.forEach(card => card.classList.remove('hidden'));
+                } else {
+                    categorySections.forEach(section => {
+                        if (section.dataset.category === filter) {
+                            section.classList.remove('hidden');
+                        } else {
+                            section.classList.add('hidden');
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
