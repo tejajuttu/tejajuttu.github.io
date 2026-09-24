@@ -64,25 +64,22 @@ document.querySelector("#reset-trail").addEventListener("click", () => {
   explored.clear();
   updateTrail();
 });
-const revealObserver = new IntersectionObserver(
-  (entries) =>
-    entries.forEach((e) => {
-      if (e.isIntersecting) {
-        e.target.classList.add("visible");
-        revealObserver.unobserve(e.target);
-      }
-    }),
-  { threshold: 0.08 },
-);
-if (!reduced.matches)
-  document
-    .querySelectorAll(
-      ".section-heading,.intro-grid,.practice-grid,.project-heading,.project-card,.journey-grid,.notes-grid article,.play-heading,.play-card",
-    )
-    .forEach((el) => {
-      el.classList.add("reveal");
-      revealObserver.observe(el);
-    });
+const header = document.querySelector("header");
+const navLinks = [...document.querySelectorAll("nav a")];
+function updateNavigation() {
+  header.classList.toggle("scrolled", scrollY > 60);
+  const current = [...navLinks]
+    .reverse()
+    .find(
+      (link) =>
+        document.querySelector(link.hash).getBoundingClientRect().top <= 180,
+    );
+  navLinks.forEach((link) => {
+    if (link === current) link.setAttribute("aria-current", "location");
+    else link.removeAttribute("aria-current");
+  });
+}
+updateNavigation();
 let scrollQueued = false;
 window.addEventListener(
   "scroll",
@@ -93,6 +90,7 @@ window.addEventListener(
       const max = document.documentElement.scrollHeight - innerHeight;
       document.querySelector(".reading-progress").style.width =
         `${max ? (scrollY / max) * 100 : 0}%`;
+      updateNavigation();
       scrollQueued = false;
     });
   },

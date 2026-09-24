@@ -35,6 +35,28 @@ try {
     [],
     "Homepage accessibility violations",
   );
+  assert.equal(
+    await page.locator(".project-card > .project-action").count(),
+    3,
+  );
+  await page.locator('nav a[href="#journey"]').click();
+  await page.waitForFunction(
+    () =>
+      document
+        .querySelector('nav a[href="#journey"]')
+        .getAttribute("aria-current") === "location",
+  );
+  assert.equal(
+    await page
+      .locator("header")
+      .evaluate((el) => getComputedStyle(el).position),
+    "fixed",
+  );
+  assert.ok(
+    await page
+      .locator("#journey")
+      .evaluate((el) => el.getBoundingClientRect().top >= 76),
+  );
   for (const name of ["media", "agents", "delivery"]) {
     await page.locator(`[data-project="${name}"]`).click();
     assert.equal(await page.locator("dialog[open]").count(), 1);
