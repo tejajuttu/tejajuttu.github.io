@@ -1,3 +1,4 @@
+import { mountScenario } from "./scenario.js";
 import "./style.css";
 const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
 let motionPaused = reduced.matches;
@@ -17,13 +18,67 @@ reduced.addEventListener("change", (e) => {
   motionPaused = e.matches;
   updateMotion();
 });
-import("./mountain.js")
-  .then(({ createMountain }) =>
-    createMountain(document.querySelector("#mountain"), () => motionPaused),
-  )
-  .catch(() => {
-    motionButton.hidden = true;
-  });
+const terrainButton = document.querySelector("#terrain-toggle");
+const terrainContainer = document.querySelector("#mountain");
+let terrainInstance = null;
+let terrainLoading = null;
+let terrainWanted = false;
+function showTerrain(visible) {
+  terrainContainer.hidden = !visible;
+  motionButton.hidden = !visible;
+  terrainButton.setAttribute("aria-pressed", String(visible));
+  terrainButton.setAttribute(
+    "aria-label",
+    visible ? "Return to alpine artwork" : "Explore interactive 3D terrain",
+  );
+  terrainButton.textContent = visible ? "Art ↗" : "3D ↗";
+  terrainButton
+    .closest(".hero-art")
+    .classList.toggle("terrain-visible", visible);
+  window.dispatchEvent(new Event("resize"));
+}
+function terrainUnavailable() {
+  terrainWanted = false;
+  terrainInstance?.dispose();
+  terrainInstance = null;
+  showTerrain(false);
+  terrainButton.removeAttribute("aria-busy");
+  terrainButton.textContent = "Retry";
+  terrainButton.setAttribute(
+    "aria-label",
+    "3D terrain unavailable. Retry interactive terrain",
+  );
+}
+terrainButton.addEventListener("click", () => {
+  terrainWanted = !terrainWanted;
+  if (!terrainWanted || terrainInstance) {
+    showTerrain(terrainWanted);
+    return;
+  }
+  terrainButton.textContent = "Loading";
+  terrainButton.setAttribute(
+    "aria-label",
+    "Loading 3D terrain. Cancel loading",
+  );
+  terrainButton.setAttribute("aria-pressed", "true");
+  terrainButton.setAttribute("aria-busy", "true");
+  if (terrainLoading) return;
+  terrainLoading = import("./mountain.js")
+    .then(({ createMountain }) => {
+      if (!terrainWanted) return;
+      terrainInstance = createMountain(
+        terrainContainer,
+        () => motionPaused || terrainContainer.hidden,
+        terrainUnavailable,
+      );
+      showTerrain(true);
+    })
+    .catch(terrainUnavailable)
+    .finally(() => {
+      terrainLoading = null;
+      terrainButton.removeAttribute("aria-busy");
+    });
+});
 document.querySelector("#year").textContent = new Date().getFullYear();
 const storageKey = "teja-trail-v1";
 let explored = new Set();
@@ -458,3 +513,14 @@ document.querySelector("#open-descent").addEventListener("click", () => {
     window.removeEventListener("blur", release);
   };
 });
+
+function openScenario() {
+  showDialog("<h2>You’re the FDE.</h2>");
+  mountScenario(content);
+}
+document
+  .querySelector("#open-scenario")
+  .addEventListener("click", openScenario);
+document
+  .querySelector("#hero-scenario")
+  .addEventListener("click", openScenario);

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="theme-color" content="#142321" />
+    <meta name="theme-color" content="#111412" />
     <title>Teja Juttu — AI engineer. Field notes from the climb.</title>
     <meta
       name="description"
@@ -37,408 +37,427 @@
   <body>
     <a class="skip" href="#main">Skip to content</a>
     <header>
-      <a href="#home" class="wordmark" aria-label="Teja Juttu home"
+      <a class="wordmark" href="#home" aria-label="Teja Juttu home"
         >tj<span>↗</span></a
+      ><a class="header-name" href="#home"
+        >Teja Juttu <span>Engineer. Builder. Explorer.</span></a
       >
-      <nav aria-label="Main navigation">
-        <a href="#work">About</a><a href="#impact">AI work</a
-        ><a href="#journey">Experience</a><a href="#field-notes">Notes</a
-        ><a href="#off-clock">Play</a>
-      </nav>
-      <a href="#contact" class="header-contact">Say hello <span>↗</span></a>
-    </header>
-    <main id="main">
-      <section class="hero" id="home" aria-labelledby="hero-title">
-        <div class="sky" aria-hidden="true">
-          <div class="sun"></div>
-          <div class="fallback-ridge"></div>
-        </div>
-        <div id="mountain" aria-hidden="true"></div>
-        <div class="hero-shade" aria-hidden="true"></div>
-        <div class="hero-content">
-          <div class="eyebrow light">
-            <span class="status-dot"></span> TEJA JUTTU
-            <span class="divider">/</span> LEAD FDE AT ELIZA
-          </div>
-          <h1 id="hero-title">
-            Building AI.<br />Finding the<br /><em>next line.</em>
-          </h1>
-          <p>
-            Engineering depth. A feel for the terrain.<br />Turning enterprise
-            ambition into systems<br class="desktop-break" />
-            people can trust.
-          </p>
-          <a href="#impact" class="pill">Explore my AI work <span>↗</span></a>
-        </div>
-        <div class="mountain-label">
-          <span class="crosshair">+</span>
-          <div>
-            THE WORK IS THE WAY<small>Always learning. Still climbing.</small>
-          </div>
-        </div>
-        <div class="hero-footer">
-          <a href="#work" class="scroll-cue"><span>↓</span> SCROLL TO EXPLORE</a
-          ><span class="coordinates"
-            >SAN FRANCISCO, CA <i>37.77° N / 122.42° W</i></span
-          ><button id="motion-toggle" aria-pressed="false">
-            Pause motion <span>Ⅱ</span>
-          </button>
-        </div>
-      </section>
-      <div class="routebar">
-        <span><i></i> CURRENT EXPEDITION</span
-        ><a href="https://eliza.com" target="_blank" rel="noopener">ELIZA ↗</a
-        ><span>APPLIED AI · TECHNICAL LEADERSHIP · ENTERPRISE DELIVERY</span>
+      <div class="header-location">
+        <span class="status-dot"></span> SAN FRANCISCO, CA
       </div>
-      <section class="intro section" id="work">
-        <div class="section-heading">
-          <span class="eyebrow">01 / LEADING AT ELIZA</span
-          ><span class="annotation">Where possibility meets practice.</span>
-        </div>
-        <div class="intro-grid">
-          <h2>
-            The interesting work<br />begins where<br /><em>the map stops.</em>
-          </h2>
-          <div class="intro-copy">
-            <div class="role-label">
-              <span class="status-dot"></span> LEAD FORWARD DEPLOYED ENGINEER ·
-              ELIZA
-            </div>
-            <p class="large-copy">
-              I work where enterprise ambition meets engineering reality.
-            </p>
-            <p>
-              I shape technical direction across customer engagements, build
-              alongside forward-deployed engineers, and help teams turn
-              ambiguous problems into AI systems people can use and trust.
-            </p>
-            <p>
-              Architecture, agentic workflows, evaluation, integration. And the
-              human work around them: choosing the right problem, making the
-              tradeoffs clear, and helping the team carry it forward.
-            </p>
-            <a
+      <a class="header-contact" href="#contact">Let’s talk <span>↗</span></a>
+    </header>
+    <nav aria-label="Main navigation" class="dock">
+      <a href="#work"><span aria-hidden="true">◉</span> About</a
+      ><a href="#impact"><span aria-hidden="true">▦</span> AI work</a
+      ><a href="#journey"><span aria-hidden="true">↗</span> Experience</a
+      ><a href="#field-notes"><span aria-hidden="true">≋</span> Notes</a
+      ><a href="#off-clock"><span aria-hidden="true">♧</span> Play</a>
+    </nav>
+    <main id="main">
+      <section class="hero shell" id="home" aria-labelledby="hero-title">
+        <div class="hero-content">
+          <div class="eyebrow">
+            <span class="status-dot"></span> LEAD FORWARD DEPLOYED ENGINEER
+            <a href="https://eliza.com" target="_blank" rel="noopener"
+              >@ ELIZA ↗</a
+            >
+          </div>
+          <h1 id="hero-title">AI engineering.<br /><em>Human judgment.</em></h1>
+          <p>
+            I’m Teja. I build enterprise AI systems, lead through the hard
+            decisions, and help engineering teams find their next gear.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#impact"
+              >Explore my work <span>↗</span></a
+            ><button class="button" id="hero-scenario">
+              Step into my shoes <span>→</span>
+            </button>
+          </div>
+          <div class="hero-foot">
+            <span>BUILDING AI. FINDING THE NEXT LINE.</span
+            ><a
               href="https://www.linkedin.com/in/tejajuttu/"
               target="_blank"
               rel="noopener"
-              class="text-link"
-              >A little more about me <span>↗</span></a
+              >LinkedIn ↗</a
+            ><a
+              href="https://github.com/tejajuttu"
+              target="_blank"
+              rel="noopener"
+              >GitHub ↗</a
             >
           </div>
+        </div>
+        <div class="hero-art">
+          <img
+            src="/art/alpine-observatory.webp"
+            alt="A sculptural alpine peak in graphite stone with a copper climbing route and an observatory at its summit"
+            fetchpriority="high"
+            width="1536"
+            height="1024"
+          />
+          <div id="mountain" aria-hidden="true" hidden></div>
+          <div class="art-top">
+            <span>01 / THE NEXT LINE</span><span>↗</span>
+          </div>
+          <div class="art-bottom">
+            <span
+              >A little perspective.<br /><em>Earned along the way.</em></span
+            ><button
+              id="terrain-toggle"
+              class="round-button"
+              aria-label="Explore interactive 3D terrain"
+              aria-pressed="false"
+            >
+              3D ↗
+            </button>
+          </div>
+          <button id="motion-toggle" aria-pressed="false" hidden>
+            Pause motion
+          </button>
+        </div>
+      </section>
+      <div class="credential-strip shell">
+        <span><b>NOW</b> Lead FDE at Eliza</span
+        ><span><b>PREVIOUSLY</b> AI & Data at EY</span
+        ><span><b>FOUNDATIONS</b> Georgia Tech · IIT Madras</span>
+      </div>
+      <section class="section shell" id="work">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">01 / THE WORK BEHIND THE TITLE</span>
+            <h2>
+              Close to the problem.<br /><em>Deep in the engineering.</em>
+            </h2>
+          </div>
+          <p>
+            At Eliza, I work across customer engagements—connecting
+            architecture, hands-on building, and the judgment that helps FDE
+            teams deliver.
+          </p>
         </div>
         <div class="practice-grid">
           <article>
-            <span class="card-number">01 / ARCHITECT</span>
-            <h3>Find the right line.</h3>
-            <p>
-              Connect business intent to system design. Make the calls on
-              models, retrieval, tools, and the boundaries between them.
-            </p>
+            <span class="practice-icon" aria-hidden="true">⌘</span>
+            <div>
+              <h3>Shape the system.</h3>
+              <p>
+                Turn ambiguous needs into practical architecture. Make the calls
+                on models, retrieval, integrations, and where AI belongs.
+              </p>
+            </div>
           </article>
           <article>
-            <span class="card-number">02 / BUILD</span>
-            <h3>Stay close to the rock.</h3>
-            <p>
-              Work through the engineering: real data, enterprise integrations,
-              evaluation, and the details that make a system useful.
-            </p>
+            <span class="practice-icon" aria-hidden="true">⌁</span>
+            <div>
+              <h3>Build through the hard parts.</h3>
+              <p>
+                Stay close to the code, real data, and evaluation. Connect
+                engineering decisions to what users can actually trust.
+              </p>
+            </div>
           </article>
           <article>
-            <span class="card-number">03 / MULTIPLY</span>
-            <h3>Make the team stronger.</h3>
-            <p>
-              Coach through real work. Turn field learning into reusable
-              patterns, clearer judgment, and teams that can own the next
-              deployment.
-            </p>
+            <span class="practice-icon" aria-hidden="true">↗</span>
+            <div>
+              <h3>Raise the team’s ceiling.</h3>
+              <p>
+                Coach through real work. Turn deployment learning into reusable
+                patterns and teams ready to own the next challenge.
+              </p>
+            </div>
           </article>
         </div>
       </section>
-      <section class="projects section" id="impact">
+      <section class="section shell" id="impact">
         <div class="section-heading">
-          <span class="eyebrow">02 / SELECTED AI WORK</span
-          ><span class="annotation"
-            >Explore a project to see the engineering.</span
-          >
-        </div>
-        <div class="project-heading">
-          <h2>Intelligence,<br /><em>put to work.</em></h2>
+          <div>
+            <span class="eyebrow">02 / SELECTED AI WORK</span>
+            <h2>From possibility <em>to practice.</em></h2>
+          </div>
           <p>
-            Selected areas from my AI engineering<br />and technology consulting
-            work.
+            Explore the systems, the thinking,<br />and the decisions beneath
+            the surface.
           </p>
         </div>
-        <div class="project-grid">
-          <button class="project-card media" data-project="media">
-            <div class="project-art film-art" aria-hidden="true">
-              <div class="film-frame f1"></div>
-              <div class="film-frame f2"></div>
-              <div class="film-frame f3"></div>
-              <span class="scanline"></span>
-              <div class="art-caption">VIDEO → CONTEXT → POSSIBILITY</div>
+        <div class="work-layout">
+          <div class="project-grid">
+            <button class="project-card" data-project="media">
+              <div class="project-art">
+                <img
+                  src="/art/multimodal-lens.webp"
+                  alt="Sculptural lens resolving layers of visual and audio information"
+                  loading="lazy"
+                  width="1536"
+                  height="1024"
+                /><span class="image-badge">MULTIMODAL AI</span
+                ><span class="image-arrow" aria-hidden="true">↗</span>
+              </div>
+              <div class="project-copy">
+                <div class="eyebrow">EY / AI ENGINEERING</div>
+                <h3>See beyond the frame.</h3>
+                <p>
+                  Video, audio, and text become searchable context—and the
+                  starting point for new workflows.
+                </p>
+                <div class="tags">
+                  <span>Video understanding</span
+                  ><span>Semantic retrieval</span>
+                </div>
+                <div
+                  class="project-route"
+                  role="img"
+                  aria-label="Conceptual multimodal workflow"
+                >
+                  <span>Video + audio</span><b>→</b><span>Scene context</span
+                  ><b>→</b><span>Retrieval</span>
+                </div>
+              </div>
+              <span class="project-action"
+                >Inside the engineering <span>↗</span></span
+              ></button
+            ><button class="project-card" data-project="agents">
+              <div class="project-art">
+                <img
+                  src="/art/agent-instrument.webp"
+                  alt="A precision instrument of copper bridges, sage glass, and connected stone discs"
+                  loading="lazy"
+                  width="1536"
+                  height="1024"
+                /><span class="image-badge">AGENTIC SYSTEMS</span
+                ><span class="image-arrow" aria-hidden="true">↗</span>
+              </div>
+              <div class="project-copy">
+                <div class="eyebrow">EY / AI ENGINEERING</div>
+                <h3>From answers to action.</h3>
+                <p>
+                  Agents grounded in the right context, connected to useful
+                  tools, and designed with clear boundaries.
+                </p>
+                <div class="tags">
+                  <span>Agentic RAG</span><span>Tool orchestration</span>
+                </div>
+                <div
+                  class="project-route"
+                  role="img"
+                  aria-label="Conceptual agent workflow"
+                >
+                  <span>Ground</span><b>→</b><span>Reason</span><b>→</b
+                  ><span>Act + evaluate</span>
+                </div>
+              </div>
+              <span class="project-action"
+                >Inside the engineering <span>↗</span></span
+              >
+            </button>
+          </div>
+          <aside class="work-sidebar">
+            <button class="delivery-card" data-project="delivery">
+              <span class="eyebrow"
+                ><span class="status-dot"></span> CURRENTLY AT ELIZA</span
+              >
+              <h3>The last mile<br />is <em>the work.</em></h3>
+              <p>
+                Architecture. Evaluation. Team judgment. Helping enterprise AI
+                survive contact with reality.
+              </p>
+              <span class="project-action"
+                >My Lead FDE lens <span>↗</span></span
+              >
+            </button>
+            <div class="scenario-card">
+              <span class="eyebrow"
+                ><span class="live-dot"></span> INTERACTIVE / 2 MIN</span
+              >
+              <div class="scenario-diagram" aria-hidden="true">
+                <span>CONTEXT</span><i>→</i><span>JUDGMENT</span><i>→</i
+                ><span>ACTION</span>
+              </div>
+              <h3>You’re the FDE.</h3>
+              <p>
+                The demo works. The customer wants to launch. What do you do
+                next?
+              </p>
+              <button id="open-scenario" class="button primary">
+                Make the call <span>→</span></button
+              ><small>A fictional deployment. Three real tradeoffs.</small>
             </div>
-            <div class="project-meta">
-              <span>01 / MULTIMODAL AI</span><span>↗</span>
-            </div>
-            <h3>See beyond the frame.</h3>
-            <p>Making video, audio, and text searchable—and useful.</p>
-            <span class="project-tags"
-              >SEMANTIC SEARCH / VIDEO UNDERSTANDING</span
-            >
-            <span class="project-action"
-              >Explore the work <span aria-hidden="true">↗</span></span
-            >
-          </button>
-          <button class="project-card agents" data-project="agents">
-            <div class="project-art network-art" aria-hidden="true">
-              <svg viewBox="0 0 450 250">
-                <g fill="none" stroke="currentColor" stroke-width="1">
-                  <path
-                    d="M225 125 95 55M225 125 355 55M225 125 95 195M225 125 355 195M95 55 95 195M355 55 355 195"
-                  />
-                  <circle cx="225" cy="125" r="63" stroke-dasharray="3 7" />
-                  <circle cx="225" cy="125" r="92" opacity=".25" />
-                </g>
-                <g class="nodes">
-                  <circle cx="95" cy="55" r="9" />
-                  <circle cx="355" cy="55" r="9" />
-                  <circle cx="95" cy="195" r="9" />
-                  <circle cx="355" cy="195" r="9" />
-                  <circle cx="225" cy="125" r="24" />
-                </g>
-                <path
-                  d="m216 126 6 6 13-15"
-                  fill="none"
-                  stroke="#203b35"
-                  stroke-width="2"
-                />
-              </svg>
-              <div class="art-caption">RETRIEVE → REASON → ACT</div>
-            </div>
-            <div class="project-meta">
-              <span>02 / AGENTIC SYSTEMS</span><span>↗</span>
-            </div>
-            <h3>From answers to action.</h3>
-            <p>
-              Grounded retrieval. Tools with boundaries. Workflows that connect.
-            </p>
-            <span class="project-tags">AGENTIC RAG / TOOL ORCHESTRATION</span>
-            <span class="project-action"
-              >Explore the work <span aria-hidden="true">↗</span></span
-            >
-          </button>
-          <button class="project-card craft" data-project="delivery">
-            <div class="project-art contour-art" aria-hidden="true">
-              <svg viewBox="0 0 450 250">
-                <g fill="none" stroke="currentColor">
-                  <ellipse cx="225" cy="145" rx="175" ry="75" />
-                  <ellipse cx="225" cy="135" rx="145" ry="63" />
-                  <ellipse cx="225" cy="123" rx="115" ry="51" />
-                  <ellipse cx="225" cy="111" rx="85" ry="39" />
-                  <ellipse cx="225" cy="99" rx="55" ry="27" />
-                  <ellipse cx="225" cy="87" rx="25" ry="15" />
-                </g>
-                <path
-                  d="M80 170 145 145 195 130 225 88"
-                  stroke="#e5bc8d"
-                  fill="none"
-                  stroke-width="2"
-                  stroke-dasharray="4 5"
-                />
-                <circle cx="225" cy="88" r="5" fill="#e5bc8d" />
-              </svg>
-              <div class="art-caption">DESIGN → EVALUATE → DEPLOY</div>
-            </div>
-            <div class="project-meta">
-              <span>03 / ENTERPRISE DELIVERY</span><span>↗</span>
-            </div>
-            <h3>The last mile is the work.</h3>
-            <p>
-              Bringing engineering, evaluation, and adoption into the same
-              conversation.
-            </p>
-            <span class="project-tags">TECHNICAL DIRECTION / DEPLOYMENT</span>
-            <span class="project-action"
-              >Explore the work <span aria-hidden="true">↗</span></span
-            >
-          </button>
+          </aside>
         </div>
       </section>
-      <section class="quote-section">
-        <div class="contours" aria-hidden="true"></div>
-        <span class="eyebrow">A NOTE FROM THE FIELD</span>
-        <blockquote>
-          “What we learn should<br />outlast <em>what we ship.</em>”
-        </blockquote>
-        <span class="quote-signature">AN ENGINEERING PRINCIPLE</span>
-      </section>
-      <section class="journey section" id="journey">
+      <section class="section shell" id="journey">
         <div class="section-heading">
-          <span class="eyebrow">03 / EXPERIENCE</span
-          ><span class="annotation"
-            >The view changes. The curiosity stays.</span
+          <div>
+            <span class="eyebrow">03 / EXPERIENCE</span>
+            <h2>Different terrain.<br /><em>A continuous thread.</em></h2>
+          </div>
+          <a
+            class="text-link"
+            href="https://www.linkedin.com/in/tejajuttu/"
+            target="_blank"
+            rel="noopener"
+            >Full experience on LinkedIn ↗</a
           >
         </div>
-        <div class="journey-grid">
-          <div class="journey-title">
-            <h2>Different terrain.<br /><em>A continuous thread.</em></h2>
-            <p>
-              AI engineering, technology consulting, and a habit of getting
-              close to the problem.
-            </p>
-            <div class="altitude-mark" aria-hidden="true">
-              ↗<small>KEEP GOING</small>
-            </div>
-          </div>
-          <div class="timeline">
-            <article class="current">
-              <span class="timeline-dot"></span>
-              <div class="timeline-date">
-                JUN 2026 — NOW <span>ON THE MOUNTAIN</span>
-              </div>
+        <div class="career-list">
+          <article class="career current">
+            <div class="company-icon">e.</div>
+            <div>
               <h3>Eliza</h3>
               <h4>Lead Forward Deployed Engineer</h4>
               <p>
-                Technical direction, hands-on engineering, and delivery
-                leadership across enterprise AI engagements. Helping FDE teams
-                build with judgment and leave customers more capable.
+                Technical direction, enterprise AI engineering, and delivery
+                leadership across customer engagements.
               </p>
-            </article>
-            <article>
-              <span class="timeline-dot"></span>
-              <div class="timeline-date">JUL 2023 — JUN 2026</div>
+            </div>
+            <div class="career-date">
+              JUN 2026 — NOW<span>ON THE MOUNTAIN</span>
+            </div>
+          </article>
+          <article class="career">
+            <div class="company-icon ey">EY</div>
+            <div>
               <h3>EY</h3>
               <h4>Lead AI Engineer, AI & Data</h4>
               <p>
-                Agentic systems, multimodal media intelligence, enterprise
-                retrieval, and AI solutions across industries. Led developer
-                teams of 4–8 and brought MVPs through UAT.
+                Agentic systems, multimodal media intelligence, and enterprise
+                retrieval. Led teams of 4–8 and brought MVPs through UAT.
               </p>
-            </article>
-            <article>
-              <span class="timeline-dot"></span>
-              <div class="timeline-date">JUL 2022 — JUL 2023</div>
+            </div>
+            <div class="career-date">JUL 2023 — JUN 2026</div>
+          </article>
+          <article class="career">
+            <div class="company-icon ey">EY</div>
+            <div>
               <h3>EY</h3>
               <h4>Senior Data Scientist</h4>
               <p>
-                Applied ML for manufacturing and retail: forecasting, decision
-                models, NLP, and workflow automation.
+                Forecasting, decision models, NLP, and workflow automation for
+                manufacturing and retail.
+              </p>
+            </div>
+            <div class="career-date">JUL 2022 — JUL 2023</div>
+          </article>
+        </div>
+        <details class="earlier">
+          <summary>Earlier footholds <span>+</span></summary>
+          <div class="earlier-grid">
+            <article>
+              <span>2022 / PLAYERZERO</span>
+              <h4>Product Data Science</h4>
+              <p>
+                NLP-driven bug triage, session analysis, and product
+                experimentation.
               </p>
             </article>
-            <details class="earlier">
-              <summary>Earlier footholds <span>+</span></summary>
-              <article>
-                <div class="timeline-date">2022 / PLAYERZERO</div>
-                <h4>Product Data Science</h4>
-                <p>
-                  NLP-driven bug triage, session analysis, and product
-                  experimentation.
-                </p>
-              </article>
-              <article>
-                <div class="timeline-date">2021 / GOLDMAN SACHS</div>
-                <h4>Data Science, Risk</h4>
-                <p>
-                  Consumer credit strategy and analytics for elective medical
-                  financing.
-                </p>
-              </article>
-              <article>
-                <div class="timeline-date">2018–2020 / AMERICAN EXPRESS</div>
-                <h4>Business Analytics, Paid Search</h4>
-                <p>
-                  Experimentation, automation, and paid media analytics across
-                  European markets.
-                </p>
-              </article>
-              <article>
-                <div class="timeline-date">2017–2018 / EY</div>
-                <h4>Public-sector consulting</h4>
-                <p>
-                  Healthcare and agricultural infrastructure strategy in India
-                  and Cambodia.
-                </p>
-              </article>
-            </details>
-            <div class="education">
-              <span class="eyebrow">FOUNDATIONS</span>
-              <p>Georgia Tech <span>MS · Computational Data Science</span></p>
-              <p>IIT Madras <span>Bachelor’s degree</span></p>
-              <a class="text-link" href="projects.html"
-                >Explore the academic archive ↗</a
-              >
-            </div>
+            <article>
+              <span>2021 / GOLDMAN SACHS</span>
+              <h4>Data Science, Risk</h4>
+              <p>
+                Consumer credit strategy and analytics for elective medical
+                financing.
+              </p>
+            </article>
+            <article>
+              <span>2018–2020 / AMERICAN EXPRESS</span>
+              <h4>Business Analytics, Paid Search</h4>
+              <p>
+                Experimentation, automation, and paid media analytics across
+                European markets.
+              </p>
+            </article>
+            <article>
+              <span>2017–2018 / EY</span>
+              <h4>Public-sector consulting</h4>
+              <p>
+                Healthcare and agricultural infrastructure strategy in India and
+                Cambodia.
+              </p>
+            </article>
           </div>
+        </details>
+        <div class="education">
+          <span
+            >Georgia Tech <small>MS · Computational Data Science</small></span
+          ><span>IIT Madras <small>Bachelor’s degree</small></span
+          ><a href="projects.html" class="text-link"
+            >Academic project archive ↗</a
+          >
         </div>
       </section>
-      <section class="field section" id="field-notes">
+      <section class="section shell" id="field-notes">
         <div class="section-heading">
-          <span class="eyebrow">04 / FIELD NOTES</span
-          ><span class="annotation">Things I come back to.</span>
+          <div>
+            <span class="eyebrow">04 / FIELD NOTES</span>
+            <h2>A few things <em>I come back to.</em></h2>
+          </div>
+          <span class="annotation"
+            >What we learn should outlast what we ship.</span
+          >
         </div>
-        <h2>A little perspective.<br /><em>Earned along the way.</em></h2>
         <div class="notes-grid">
           <article>
-            <span>01 / JUDGMENT</span>
-            <p>
-              Judgment is knowing<br />what deserves<br /><em>complexity.</em>
-            </p>
+            <span class="eyebrow">01 / JUDGMENT</span>
+            <p>Judgment is knowing what deserves <em>complexity.</em></p>
             <small>The simplest architecture that earns trust.</small>
           </article>
           <article>
-            <span>02 / TRUST</span>
+            <span class="eyebrow">02 / TRUST</span>
             <p>The demo ends.<br /><em>The work begins.</em></p>
             <small>Real workflows. Real constraints. Real use.</small>
           </article>
           <article>
-            <span>03 / CURIOSITY</span>
+            <span class="eyebrow">03 / CURIOSITY</span>
             <p>
-              Stay certain<br />about learning.<br /><em
-                >Less about being right.</em
-              >
+              Stay certain about learning.<br /><em>Less about being right.</em>
             </p>
             <small>A working principle, on and off the mountain.</small>
           </article>
         </div>
       </section>
-      <section class="off-clock section" id="off-clock">
+      <section class="section shell" id="off-clock">
         <div class="section-heading">
-          <span class="eyebrow">05 / OFF THE CLOCK</span
-          ><span class="annotation">Same curiosity. Different playground.</span>
-        </div>
-        <div class="play-heading">
-          <h2>There’s always<br /><em>another move.</em></h2>
+          <div>
+            <span class="eyebrow">05 / THE OTHER PLAYGROUNDS</span>
+            <h2>There’s always <em>another move.</em></h2>
+          </div>
           <p>
-            Rock climbing. Snowboarding. Chess. Dota 2.<br />I like things that
-            reward patience, practice,<br />and occasionally, a very bad idea.
+            Climbing, snowboarding, chess, and Dota 2.<br />Same curiosity.
+            Different stakes.
           </p>
         </div>
         <div class="play-grid">
           <button id="open-chess" class="play-card chess-card">
-            <span class="eyebrow">THE QUIET GAME</span>
-            <div class="chess-symbol" aria-hidden="true">♞</div>
-            <h3>Find the next move.</h3>
-            <p>A small chess detour. White to move.</p>
-            <span class="text-link">Take a moment ↗</span></button
+            <div>
+              <span class="eyebrow">THE QUIET GAME</span>
+              <h3>Find the next move.</h3>
+              <p>White to move. One moment of clarity.</p>
+              <span class="text-link">Try the puzzle ↗</span>
+            </div>
+            <span class="chess-symbol" aria-hidden="true">♞</span></button
           ><button id="open-descent" class="play-card descent-card">
-            <span class="eyebrow">THE LONG WAY DOWN</span
-            ><svg aria-hidden="true" viewBox="0 0 400 150">
+            <div>
+              <span class="eyebrow">THE LONG WAY DOWN</span>
+              <h3>One more run.</h3>
+              <p>Carve a line. Collect a little perspective.</p>
+              <span class="text-link">Drop in ↗</span>
+            </div>
+            <svg aria-hidden="true" viewBox="0 0 200 160">
               <path
-                d="m0 140 110-112 60 58 60-75 170 129"
+                d="M0 150 65 25 97 78 130 10 200 150"
                 fill="none"
                 stroke="currentColor"
               />
               <path
-                d="m218 27 15 28-25 26 27 27-36 34"
+                d="m129 23-12 29 17 25-25 24 18 29-22 26"
                 fill="none"
-                stroke="#e9b881"
+                stroke="#d9a075"
+                stroke-dasharray="5 5"
                 stroke-width="2"
-                stroke-dasharray="5 6"
               />
             </svg>
-            <h3>One more run.</h3>
-            <p>Carve a line. Collect a little perspective.</p>
-            <span class="text-link">Drop in ↗</span>
           </button>
         </div>
         <div class="trail-log">
@@ -450,19 +469,16 @@
           <button id="reset-trail">Reset progress</button>
         </div>
       </section>
-      <section class="contact section" id="contact">
-        <span class="eyebrow">GOOD WORK STARTS WITH A CONVERSATION</span>
-        <h2>What are you<br /><em>working toward?</em></h2>
-        <a href="mailto:shanmukha.iit@gmail.com" class="contact-cta"
-          >Let’s find a line. <span>↗</span></a
-        >
-        <div class="contact-bottom">
-          <span
-            >TEJA JUTTU<br /><small
-              >Lead FDE at Eliza · San Francisco</small
-            ></span
+      <section class="contact shell" id="contact">
+        <div>
+          <span class="eyebrow">GOOD WORK STARTS WITH A CONVERSATION</span>
+          <h2>What are you<br /><em>working toward?</em></h2>
+        </div>
+        <div>
+          <a class="button primary" href="mailto:shanmukha.iit@gmail.com"
+            >Let’s find a line <span>↗</span></a
           >
-          <div>
+          <div class="contact-links">
             <a
               href="https://www.linkedin.com/in/tejajuttu/"
               target="_blank"
@@ -478,7 +494,7 @@
         </div>
       </section>
     </main>
-    <footer>
+    <footer class="shell">
       <span>© <span id="year">2026</span> TEJA JUTTU</span
       ><span>Still becoming.</span><a href="#home">BACK TO THE RIDGE ↑</a>
     </footer>
