@@ -1,0 +1,22 @@
+{
+  "name": "teja-alpine-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build && node scripts/publish-build.mjs",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "node scripts/verify.mjs",
+    "format": "prettier --write app scripts vite.config.js package.json"
+  },
+  "dependencies": {
+    "three": "^0.180.0"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "playwright-core": "^1.63.0",
+    "prettier": "^3.9.9",
+    "vite": "^7.1.7"
+  }
+}
