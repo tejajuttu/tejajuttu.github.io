@@ -1,22 +1,15 @@
 {
-  "name": "teja-alpine-portfolio",
+  "name": "tejajuttu-site",
   "private": true,
-  "version": "1.0.0",
+  "version": "2.0.0",
   "type": "module",
+  "description": "Teja Juttu's personal site. Plain static HTML/CSS/JS served by GitHub Pages — no build step.",
   "scripts": {
-    "dev": "vite --host 127.0.0.1",
-    "build": "vite build && node scripts/publish-build.mjs",
-    "preview": "vite preview --host 127.0.0.1",
-    "test": "node scripts/verify.mjs",
-    "format": "prettier --write app scripts vite.config.js package.json"
-  },
-  "dependencies": {
-    "three": "^0.180.0"
+    "serve": "python3 -m http.server 4173",
+    "test": "node scripts/verify.mjs"
   },
   "devDependencies": {
-    "@axe-core/playwright": "^4.13.0",
-    "playwright-core": "^1.63.0",
-    "prettier": "^3.9.9",
-    "vite": "^7.1.7"
+    "axe-core": "^4.10.0",
+    "playwright-core": "^1.56.0"
   }
 }

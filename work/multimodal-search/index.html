@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scene-level search for video libraries — Teja Juttu</title>
+<meta name="description" content="How we made video libraries searchable by scene — video understanding, audio parsing and metadata enrichment in one index. A project from Teja Juttu's time at EY.">
+<link rel="canonical" href="https://tejajuttu.github.io/work/multimodal-search/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Scene-level search for video libraries — Teja Juttu">
+<meta property="og:description" content="How we made video libraries searchable by scene — video understanding, audio parsing and metadata enrichment in one index. A project from Teja Juttu's time at EY.">
+<meta property="og:url" content="https://tejajuttu.github.io/work/multimodal-search/">
+<meta property="og:image" content="https://tejajuttu.github.io/social-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F6F3EC">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+<a class="wordmark" href="/">Teja Juttu</a>
+<nav class="site-nav" aria-label="Main">
+<a href="/#work" aria-current="page">Work</a>
+<a href="/#about">About</a>
+<a href="/#notes">Notes</a>
+<a href="/#contact">Contact</a>
+</nav>
+</header>
+<main id="main">
+<div class="page-head">
+<p class="crumbs"><a href="/#work">Work</a><span aria-hidden="true">/</span>EY, 2023 – 2026</p>
+<h1>Scene-level search for video libraries</h1>
+<p class="lede">A media library is searchable only by what someone typed into its metadata. We made the footage itself searchable — by what’s on screen and what’s said — and used the result to drive new content.</p>
+<dl class="project-meta">
+<div><dt>Where</dt><dd>EY, AI &amp; Data practice, for a media &amp; entertainment client</dd></div>
+<div><dt>When</dt><dd>2023 – 2026</dd></div>
+<div><dt>My role</dt><dd>Lead AI Engineer</dd></div>
+</dl>
+</div>
+
+<figure class="big-diagram" aria-labelledby="bd-cap">
+<figcaption><b id="bd-cap">How a clip becomes searchable</b><span class="note">Sketch of the approach, not a client system.</span></figcaption>
+<div class="big-flow">
+<div class="box">Video library<small>footage, broadcasts, clips</small></div>
+<div class="link" aria-hidden="true"></div>
+<div class="stack bracket">
+<div class="box">Scenes &amp; shots<small>video understanding: what’s on screen</small></div>
+<div class="box">Speech &amp; sound<small>audio parsing: what’s said and heard</small></div>
+<div class="box">Titles, people, tags<small>metadata enrichment: what it is</small></div>
+</div>
+<div class="link" aria-hidden="true"></div>
+<div class="box dark">One scene-level index<small>signals aligned on one timeline</small></div>
+<div class="link" aria-hidden="true"></div>
+<div class="stack bracket-left">
+<div class="box">Search<small>“the goal in the second half” returns the moment, not the file</small></div>
+<div class="box">Content agents<small>resized highlights for social, summary podcasts, articles</small></div>
+</div>
+</div>
+</figure>
+
+<article class="prose">
+<section aria-labelledby="p1">
+<h2 id="p1">The problem</h2>
+<div class="text">
+<p>Media companies sit on large video libraries, but finding a specific moment usually means knowing the right file and scrubbing through it. Metadata describes the asset, not what happens inside it — so most of the footage is effectively invisible to search.</p>
+<p>The aim was to make that content usable again: find a scene by describing it, then turn what you find into something new.</p>
+</div>
+</section>
+<section aria-labelledby="p2">
+<h2 id="p2">What I built</h2>
+<div class="text">
+<p>Three extraction paths run over each piece of content: video understanding to describe scenes and shots, audio parsing to capture speech and sound, and metadata enrichment to attach titles, people and tags. Their output is combined into a single index at the level of a scene, so a query lands on a moment rather than a file.</p>
+<p>On top of that index sit agents that turn search results into new content: resized highlights for social media, summary podcasts and articles.</p>
+</div>
+</section>
+<section aria-labelledby="p3">
+<h2 id="p3">The hard part</h2>
+<div class="text">
+<p>Each signal arrives at a different grain — speech by the word, shots by the frame, metadata by the asset. Getting them onto one timeline, and deciding what counts as a “scene,” is where most of the design decisions live.</p>
+</div>
+</section>
+</article>
+
+<nav class="more-work" aria-labelledby="mw">
+<p class="sans" id="mw" style="font-size:17px;font-weight:600">More work</p>
+<div class="list">
+<a href="/#w2">An agent that answers from the company’s own documents</a>
+<a href="/#w3">Reusable starting points on NVIDIA’s video search blueprint</a>
+<a class="quiet" href="/#work">All work</a>
+</div>
+</nav>
+</main>
+<footer class="site-footer">
+<p>© 2026 Teja Juttu</p>
+<a href="mailto:shanmukha.iit@gmail.com">shanmukha.iit@gmail.com</a>
+</footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

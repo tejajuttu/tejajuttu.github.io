@@ -1,40 +1,41 @@
-# Teja Juttu — Finding the next line
+# tejajuttu.github.io
 
-Personal portfolio, built with Vite, vanilla JavaScript, and Three.js. Static HTML keeps the professional content accessible without JavaScript. Custom generated artwork leads the page. The procedural 3D terrain is an optional, separately loaded view; the artwork remains the fallback when WebGL is unavailable.
+Personal site of Teja Juttu. Plain static HTML, CSS and a little JavaScript — no framework, no build step. GitHub Pages serves the `main` branch from the repository root.
 
-## Develop
+## Structure
+
+- `index.html` — home (intro, Eliza, selected work, about, notes, off the clock, contact)
+- `work/multimodal-search/` — project page
+- `archive/` — grad-school projects (filterable; readable without JS)
+- `404.html` — not-found page
+- `projects.html` — redirect from the old archive URL to `/archive/`
+- `assets/site.css`, `assets/site.js` — all styling and behaviour
+- `assets/fonts/` — Bricolage Grotesque and Source Serif 4 (SIL Open Font License, see LICENSE files)
+- `assets/img/` — photos
+- `social-card.png` — link preview image (1200×630)
+
+## Edit
+
+Edit the HTML directly. Text lives in the pages; layout lives in `assets/site.css`.
+To add a project page, copy `work/multimodal-search/index.html` into a new folder under `work/`, change the text, link to it from the home page, and add it to `sitemap.xml`.
+
+## Preview locally
 
 ```sh
-npm ci
-npm run dev
+python3 -m http.server 4173
+# open http://127.0.0.1:4173
 ```
 
-Edit `app/index.html`, `app/style.css`, `app/main.js`, and `app/mountain.js`. The existing academic archive is `projects.html`.
-
-## Build and publish
+## Check
 
 ```sh
-npm run build
+npm install
+npm run serve   # in one terminal
+npm test        # in another
 ```
 
-The build bundles into `dist/`, then copies the deployable files into the repository root. Commit both source and generated files. GitHub Pages serves `main` at `/`; no backend, credentials, or paid services are needed. `assets/` is build-owned.
+Checks: no horizontal overflow at 1440 / 820 / 390 / 320px, minimum text size, image dimensions, touch targets, axe WCAG 2.1 AA, reduced motion, skip link, chess puzzle, contact links, back navigation, archive filter, the `/projects.html` redirect, and the archive without JavaScript. Set `SITE_URL=https://tejajuttu.github.io` to check the live site. Set `CHROME_PATH` if Chrome isn't found.
 
-## Experience
+## Publish
 
-- Three custom illustrations, compact project grid, and persistent navigation dock
-- On-demand 3D terrain with an artwork fallback and motion control
-- Scripted fictional FDE scenario covering retrieval, permissions, and release decisions
-- Native HTML project dialogs and expandable career history
-- Optional chess mate-in-one and snowboard mini-game
-- Local-only exploration progress (resettable; no analytics or account)
-- Reduced-motion support, keyboard navigation, focus restoration, and readable static content
-
-Public experience is based on Teja's supplied LinkedIn export. The PDF itself and private customer material are not included. Selected work descriptions do not assert client-specific results or metrics. Field notes are editorial principles, not attributed quotations.
-
-## Verify
-
-With Chrome installed, serve the repository root on port 4173 and run `npm test`. Set `SITE_URL` to check a deployed site. The browser checks cover responsive overflow, reduced motion, project dialogs, the chess solution, snowboard movement, focus restoration, anchor targets, and automated WCAG 2.1 AA checks. Automated accessibility checks supplement manual visual and keyboard review; they are not a full accessibility certification.
-
-## Art and provenance
-
-See [ART-DIRECTION.md](ART-DIRECTION.md) for generated asset locations, exact prompts, and delivery formats.
+Commit and push to `main`. GitHub Pages updates within a minute or two.
