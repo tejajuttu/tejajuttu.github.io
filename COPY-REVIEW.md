@@ -1,6 +1,6 @@
 # Copy review — draft for Teja
 
-This is a review inventory of the integrated site at `e8876be`, before the review-package commit. The words below are proposed copy, including headings and descriptions. Source support is not approval of the phrasing. Please approve or revise the first-person wording before publication.
+This is a review inventory of the integrated site at `901e5d4`, after the supporting-page consistency pass. The words below are proposed copy, including headings and descriptions. Source support is not approval of the phrasing. Please approve or revise the first-person wording before publication.
 
 ## Source key
 
@@ -60,16 +60,13 @@ This is a review inventory of the integrated site at `e8876be`, before the revie
 
 All wording below is draft, even where the substance is supported by the brief:
 
-1. “At EY, I worked on scene-level semantic search that combined video understanding, audio parsing and metadata enrichment.” — Brief: multimodal media intelligence.
-2. “Downstream agents used the content to create highlights, podcasts and articles.” — Brief: downstream agents made highlights, summary podcasts and articles. Confirm whether the shorter “podcasts” should retain “summary.”
-3. “At EY, I worked on multimodal media intelligence.” — Brief: EY project area.
-4. “Video understanding, audio parsing and metadata enrichment made scene-level semantic search possible.” — Brief: multimodal ingredients.
-5. “Downstream agents made highlights for social media, summary podcasts and articles.” — Brief: downstream uses.
-6. “I also adapted NVIDIA’s video search blueprint into repeatable starting points for sports highlights, corporate security alerting and broadcast moderation.” — Brief: NVIDIA VSS pursuits.
+1. “At EY, I worked on scene-level semantic search for video, with downstream agents creating highlights, podcasts and articles.” — Brief: multimodal media intelligence and downstream highlights, summary podcasts, and articles. Confirm whether the shorter “podcasts” should retain “summary.”
+2. “I also adapted NVIDIA’s video search blueprint into repeatable starting points for sports highlights, corporate security alerting and broadcast moderation.” — Brief: NVIDIA VSS pursuits.
 
+The previous duplicate “The work” section was removed during the consistency pass.
 The step captions “Media content / Video and audio,” “Understand / Video understanding, audio parsing and metadata enrichment,” “Scene-level search / Semantic search across media content,” and “Downstream agents / Highlights, summary podcasts and articles” are a **conceptual editorial summary**, not a diagram of a client system. Source: brief; review wording and relationship before publication. The project labels “EY · AI & Data,” “EY role tenure 2023–2026,” and “Lead AI Engineer” describe role tenure, not a claimed project-specific date.
 
-**Metadata caveat:** the pre-existing project-page description refers to the elements being “in one index.” The supplied brief does not establish that architecture. This retained text needs correction or Teja’s explicit confirmation; it is not substantiated by the source list.
+**Metadata correction:** the unsupported “in one index” wording was removed in the consistency pass. The description now names video understanding, audio parsing and metadata enrichment without claiming that architecture.
 
 ## Existing archive and 404 copy retained for review
 
@@ -104,6 +101,6 @@ The descriptions, tools, dates and links in the 20 academic entries below are **
 
 - Homepage description and social description: “Teja Juttu, Lead Forward Deployed Engineer at Eliza. I help teams turn difficult business problems into AI systems people actually use.” This is **retained legacy copy** at `37ae94a`; the role is in the brief, while the first-person sentence is draft positioning for Teja’s approval.
 - Project title “Scene-level search for video libraries,” figure caption “How a clip becomes searchable,” and disclosure “Conceptual overview, not a client system” summarize the brief; they are editorial labels rather than Teja-authored quotes.
-- Project-page links “An agent that answers from the company’s own documents” and “Reusable starting points on NVIDIA’s video search blueprint” are retained legacy labels leading to homepage summaries. The brief supports grounded enterprise retrieval and the VSS blueprint work; the wording and implied singularity in the first label should be reviewed.
+- Project-page links “Grounding agents in enterprise knowledge” and “Making video AI easier to start” lead to the corresponding homepage summaries. These are draft labels based on the brief’s grounded enterprise retrieval and VSS blueprint work.
 - Archive metadata describes “Coursework and side projects from Teja Juttu’s master’s at Georgia Tech: machine learning, data visualization and programming.” Source: Legacy, not independently verified against original projects.
 - The 404 and archive interface labels, copyright line, chess position and controls are retained functional copy. No new professional facts are implied by those controls.
