@@ -20,281 +20,55 @@
 <link rel="preload" href="/assets/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/site.css">
 </head>
-<body>
+<body class="home">
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
-<a class="wordmark" href="/">Teja Juttu</a>
-<nav class="site-nav" aria-label="Main">
-<a href="#work">Work</a>
-<a href="#about">About</a>
-<a href="#notes">Notes</a>
-<a href="#contact">Contact</a>
-</nav>
+  <a class="wordmark" href="/">Teja Juttu</a>
+  <nav class="site-nav" aria-label="Main navigation"><a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
 </header>
 <main id="main">
-
-<section class="hero" aria-labelledby="intro">
-<div class="hero-main">
-<p class="eyebrow">Lead Forward Deployed Engineer at <a href="https://eliza.com">Eliza</a> · San&nbsp;Francisco</p>
-<h1 id="intro">I’m Teja. I help teams turn difficult business problems into AI systems people actually use.</h1>
-<p class="lede">At Eliza I set technical direction on customer engagements, build alongside our forward deployed engineers, and help them through the decisions that decide whether a system gets used. Before that I spent three years at EY building multimodal search and agentic retrieval systems for media, energy and financial-services clients.</p>
-<div class="actions">
-<a class="button" href="#work">See selected work</a>
-<a href="#contact">Get in touch</a>
-</div>
-</div>
-<aside class="definition" aria-label="What a forward deployed engineer is">
-<p class="term">forward deployed engineer</p>
-<p class="pos">noun</p>
-<p>An engineer who works inside a customer’s business instead of behind a ticket queue — close enough to see how the work really gets done, and technical enough to build the system that changes it.</p>
-<p class="lead-note"><b class="sans">Lead,</b> in my case, means I shape the architecture, write code on the hard parts, and coach the engineers doing the day-to-day building. It doesn’t mean I stopped building.</p>
-</aside>
-</section>
-
-<section class="section" aria-labelledby="eliza">
-<div class="section-label">
-<p class="name">At Eliza</p>
-<p class="meta">June 2026 – now</p>
-<p class="aside-quote">Yes, that ELIZA. The 1960s chatbot walked so enterprise AI could run.</p>
-</div>
-<div class="section-body">
-<h2 id="eliza">What I do at Eliza</h2>
-<p class="intro">Eliza embeds forward deployed engineers inside companies to build production AI systems — and to leave the team able to run and extend them. My job is to make sure what we build is technically sound, fits how the customer actually works, and makes our engineers better along the way.</p>
-<div class="rows">
-<div class="row">
-<h3>The problems</h3>
-<p>Usually a workflow that eats expert time: people searching across documents and systems, reconciling data by hand, or answering the same questions again and again. The work is finding the part AI should do — and being clear about the part it shouldn’t.</p>
-</div>
-<div class="row">
-<h3>Decisions I work on</h3>
-<ul>
-<li>Which parts need retrieval, which need an agent with tools, and which should just be ordinary code.</li>
-<li>How the system gets its context: ingestion, permissions, search quality.</li>
-<li>What “good enough” means before we build — evaluation sets, relevance metrics, acceptance thresholds.</li>
-<li>What we are not building yet, and saying so early.</li>
-</ul>
-</div>
-<div class="row">
-<h3>Helping FDEs grow</h3>
-<p>I pair on the hardest part of a build, review designs before they harden, and raise risks early with a recommendation attached. When something works twice, we write it down as a playbook or a reusable building block, so the next team starts further ahead.</p>
-</div>
-</div>
-<p class="footnote">Eliza’s customer work is confidential. I’ll add public stories here as they’re approved.</p>
-</div>
-</section>
-
-<section class="work" id="work" aria-labelledby="work-h">
-<div class="work-head">
-<div class="section-label">
-<p class="name">Selected work</p>
-<p class="meta">EY, 2023 – 2026</p>
-</div>
-<div class="section-body">
-<h2 id="work-h" class="work-title">Three systems from my time at EY</h2>
-<p class="intro">In EY’s AI &amp; Data practice I led small engineering teams building retrieval and multimodal systems for clients in media, energy and financial services. Client names stay private; the engineering doesn’t have to.</p>
-</div>
-</div>
-
-<article class="story" aria-labelledby="w1">
-<div class="story-text">
-<p class="kicker">Multimodal AI · Media &amp; entertainment</p>
-<h3 id="w1">Scene-level search for video libraries</h3>
-<p>A media library is searchable only by what someone typed into its metadata. We made the footage itself searchable — by what’s on screen and what’s said — and used that to drive new content.</p>
-<dl class="facts">
-<div><dt>My part</dt><dd>Retrieval architecture combining video understanding, audio parsing and metadata enrichment, and the agents built on top for highlights, summary podcasts and articles.</dd></div>
-<div><dt>The hard part</dt><dd>Lining up three kinds of signal on one timeline, so a search returns the right scene rather than the right file.</dd></div>
-</dl>
-<a class="more" href="/work/multimodal-search/">Read the full story<span class="visually-hidden">: scene-level search for video libraries</span></a>
-</div>
-<figure class="diagram d1" aria-labelledby="d1-cap">
-<figcaption id="d1-cap">How a clip becomes searchable</figcaption>
-<div class="flow">
-<div class="box src">Video library</div>
-<div class="link" aria-hidden="true"></div>
-<div class="stack bracket lanes">
-<div class="box lane">Scenes<span class="long"> &amp; shots</span><small>video<span class="long"> understanding</span></small></div>
-<div class="box lane">Speech<span class="long"> &amp; sound</span><small>audio<span class="long"> parsing</span></small></div>
-<div class="box lane"><span class="long">Titles, people, </span>tags<small>metadata<span class="long"> enrichment</span></small></div>
-</div>
-<div class="link" aria-hidden="true"></div>
-<div class="box dark index">One scene-level index</div>
-<div class="link" aria-hidden="true"></div>
-<div class="stack bracket-left outs">
-<div class="box out">Search<small>“the goal in the second half”</small></div>
-<div class="box out">Content agents<small>highlights, podcasts, articles</small></div>
-</div>
-</div>
-<p class="note">Sketch of the approach, not a client system.</p>
-</figure>
-</article>
-
-<article class="story flip" aria-labelledby="w2">
-<figure class="diagram d2" aria-labelledby="d2-cap">
-<figcaption id="d2-cap">One question, answered with sources</figcaption>
-<div class="flow">
-<div class="box q">A question</div>
-<div class="link" aria-hidden="true"></div>
-<div class="middle">
-<div class="box dark loop">Agent loop<small>reason · choose a tool · read the result · repeat</small></div>
-<div class="tools">
-<div class="box">Document search<small>tuned BGE embeddings + reranker</small></div>
-<div class="box">Company APIs<small>structured data the documents don’t hold</small></div>
-<div class="box">Guardrails<small>scope, grounding, when to refuse</small></div>
-</div>
-</div>
-<div class="link" aria-hidden="true"></div>
-<div class="box edge a">Answer with citations</div>
-</div>
-<p class="note">Sketch of the approach, not a client system.</p>
-</figure>
-<div class="story-text">
-<p class="kicker">Agentic retrieval · Energy</p>
-<h3 id="w2">An agent that answers from the company’s own documents</h3>
-<p>The goal was to take routine questions off subject-matter experts’ plates by giving people an assistant that searches, checks and cites the company’s own material.</p>
-<dl class="facts">
-<div><dt>My part</dt><dd>Ingestion pipelines and the search layer over unstructured, semi-structured and API data; ReAct-style tool use with guardrails; embedding tuning and reranking.</dd></div>
-<div><dt>The hard part</dt><dd>Retrieval quality. An agent is only as good as the context it pulls, so most of the effort went into what gets indexed and how results are ranked.</dd></div>
-</dl>
-</div>
-</article>
-
-<article class="story" id="vss" aria-labelledby="w3">
-<div class="story-text">
-<p class="kicker">Video AI · Alliance work with NVIDIA</p>
-<h3 id="w3">Reusable starting points on NVIDIA’s video search blueprint</h3>
-</div>
-<div class="story-text">
-<p>I adapted NVIDIA’s Video Search and Summarization (VSS) blueprint into repeatable starting points for client pursuits, so a team could show a working system in a new domain rather than a slide about one.</p>
-<ul class="uses" aria-label="Use cases">
-<li>Sports highlights</li>
-<li>Corporate security alerting</li>
-<li>Broadcast moderation for sensitive content</li>
-</ul>
-</div>
-</article>
-</section>
-
-<section class="section" id="about" aria-labelledby="about-h">
-<div class="section-label">
-<p class="name">About</p>
-<p class="meta">IIT Madras · Georgia Tech</p>
-</div>
-<div class="section-body" style="gap:56px">
-<div class="about-top">
-<div class="about-text">
-<h2 id="about-h">A bit about me</h2>
-<p>I studied at IIT Madras, then started my career at EY in New Delhi, advising governments in India and Cambodia on public health and agriculture programs. I moved into analytics at American Express, did a master’s in Computational Data Science at Georgia Tech, and spent short stints at Goldman Sachs and PlayerZero before returning to EY to build AI systems.</p>
-<p>Eliza is where those threads meet: technical work, done close to the people who’ll use it. I speak Telugu, Hindi and English, get by in Tamil, and have beginner French and Chinese.</p>
-</div>
-<div class="portrait"><img src="/assets/img/teja.jpg" alt="Teja smiling on a hilltop, with the bay and a city skyline behind him" width="760" height="950" loading="lazy" decoding="async"></div>
-</div>
-
-<div class="exp">
-<h3>Experience</h3>
-<div class="job">
-<p class="when">2026 – now</p>
-<div><p class="title">Lead Forward Deployed Engineer</p><p class="org">Eliza, San Francisco</p></div>
-<p class="what">Technical direction and hands-on engineering on customer AI deployments; coaching FDEs.</p>
-</div>
-<div class="job">
-<p class="when">2023 – 2026</p>
-<div><p class="title">Lead AI Engineer, AI &amp; Data</p><p class="org">EY, San Francisco</p></div>
-<p class="what">Agentic retrieval, multimodal media search and enterprise Q&amp;A across media, energy, financial services, retail and manufacturing. Led teams of 4–8 engineers from MVP through UAT.</p>
-</div>
-<div class="job">
-<p class="when">2022 – 2023</p>
-<div><p class="title">Senior Data Scientist</p><p class="org">EY, San Francisco</p></div>
-<p class="what">Time-series forecasting, ranking models and applied NLP for manufacturing and retail clients.</p>
-</div>
-<div class="earlier">
-<p class="when sans muted" style="font-size:16px;padding-top:3px">Earlier</p>
-<ul>
-<li><b>PlayerZero</b>, product data science, 2022 — NLP-based bug triage and session analysis.</li>
-<li><b>Goldman Sachs</b>, data science in risk, 2021 — consumer credit strategy for GreenSky’s medical financing.</li>
-<li><b>American Express</b>, paid-search analytics, 2018 – 2020 — experimentation and automation across European markets.</li>
-<li><b>EY</b>, public-sector consulting, 2017 – 2018 — health and agriculture programs in India and Cambodia.</li>
-</ul>
-</div>
-<div class="edu">
-<p><b>Georgia Tech</b> — MS, Computational Data Science</p>
-<p><b>IIT Madras</b> — Bachelor’s degree</p>
-<p><b>NVIDIA</b> — Certified Associate, Generative AI LLMs</p>
-</div>
-<div class="links">
-<a href="/archive/">Grad-school project archive (20 projects)</a>
-<a href="https://www.linkedin.com/in/tejajuttu/">Full history on LinkedIn</a>
-</div>
-</div>
-</div>
-</section>
-
-<section class="section" id="notes" aria-labelledby="notes-h">
-<div class="section-label">
-<p class="name">Notes</p>
-<p class="meta">Short, from the work</p>
-</div>
-<div class="section-body" style="gap:40px">
-<h2 id="notes-h">Things I keep relearning</h2>
-<div class="notes">
-<div class="note-row">
-<h3>Passing UAT is not adoption.</h3>
-<p>A system can clear every acceptance test and still go unused. Before we build, I want to know who opens it on an ordinary Tuesday, and why.</p>
-</div>
-<div class="note-row">
-<h3>Check the context before blaming the model.</h3>
-<p>Most bad answers I’ve debugged came from the wrong context, not the wrong model. Better embeddings and a reranker are often cheaper than a bigger LLM.</p>
-</div>
-<div class="note-row">
-<h3>Write it down the second time.</h3>
-<p>The first time is a project. The second time is a pattern — worth a template, so the next team doesn’t start from zero.</p>
-</div>
-</div>
-</div>
-</section>
-
-<section class="section" aria-labelledby="play-h">
-<div class="section-label">
-<p class="name">Off the clock</p>
-</div>
-<div class="play">
-<div class="play-text">
-<h2 id="play-h">Climbing, snowboarding, chess, Dota 2</h2>
-<p>Outside work I climb, snowboard, play chess and play Dota 2. They have one thing in common: you read the whole position before you commit.</p>
-<div class="photos">
-<figure><div class="frame"><img src="/assets/img/climbing.jpg" alt="Teja hanging one-handed from a sandstone overhang above a river canyon" width="560" height="700" loading="lazy" decoding="async"></div><figcaption>Climbing</figcaption></figure>
-<figure><div class="frame"><img src="/assets/img/snowboarding.jpg" alt="Teja on a snowboard with arms out, above a lake and snowy mountains" width="560" height="700" loading="lazy" decoding="async"></div><figcaption>Snowboarding</figcaption></figure>
-</div>
-</div>
-<div class="puzzle">
-<h3 class="title" style="letter-spacing:0">A small puzzle</h3>
-<p class="prompt">White to move and mate in one.</p>
-<div class="board" data-board role="img" aria-label="Chess position: white king f6, white queen g6, black king h8"><span data-sq="a8"></span><span data-sq="b8" class="d"></span><span data-sq="c8"></span><span data-sq="d8" class="d"></span><span data-sq="e8"></span><span data-sq="f8" class="d"></span><span data-sq="g8"></span><span data-sq="h8" class="d">♚</span><span data-sq="a7" class="d"></span><span data-sq="b7"></span><span data-sq="c7" class="d"></span><span data-sq="d7"></span><span data-sq="e7" class="d"></span><span data-sq="f7"></span><span data-sq="g7" class="d"></span><span data-sq="h7"></span><span data-sq="a6"></span><span data-sq="b6" class="d"></span><span data-sq="c6"></span><span data-sq="d6" class="d"></span><span data-sq="e6"></span><span data-sq="f6" class="d">♔</span><span data-sq="g6">♕</span><span data-sq="h6" class="d"></span><span data-sq="a5" class="d"></span><span data-sq="b5"></span><span data-sq="c5" class="d"></span><span data-sq="d5"></span><span data-sq="e5" class="d"></span><span data-sq="f5"></span><span data-sq="g5" class="d"></span><span data-sq="h5"></span><span data-sq="a4"></span><span data-sq="b4" class="d"></span><span data-sq="c4"></span><span data-sq="d4" class="d"></span><span data-sq="e4"></span><span data-sq="f4" class="d"></span><span data-sq="g4"></span><span data-sq="h4" class="d"></span><span data-sq="a3" class="d"></span><span data-sq="b3"></span><span data-sq="c3" class="d"></span><span data-sq="d3"></span><span data-sq="e3" class="d"></span><span data-sq="f3"></span><span data-sq="g3" class="d"></span><span data-sq="h3"></span><span data-sq="a2"></span><span data-sq="b2" class="d"></span><span data-sq="c2"></span><span data-sq="d2" class="d"></span><span data-sq="e2"></span><span data-sq="f2" class="d"></span><span data-sq="g2"></span><span data-sq="h2" class="d"></span><span data-sq="a1" class="d"></span><span data-sq="b1"></span><span data-sq="c1" class="d"></span><span data-sq="d1"></span><span data-sq="e1" class="d"></span><span data-sq="f1"></span><span data-sq="g1" class="d"></span><span data-sq="h1"></span></div>
-<button type="button" class="ghost-button" data-chess-toggle aria-expanded="false" hidden>Show the answer</button>
-<p class="answer" data-chess-answer aria-live="polite"></p>
-<noscript><p class="answer">Answer: Qg7#. The king on f6 protects the queen.</p></noscript>
-</div>
-</div>
-</section>
-
-<section class="section contact" id="contact" aria-labelledby="contact-h">
-<div class="section-label">
-<p class="name">Contact</p>
-</div>
-<div class="section-body">
-<h2 id="contact-h">Get in touch</h2>
-<p>Email is the best way to reach me. I’m glad to talk about putting AI into real workflows, forward deployed engineering, or a good chess game.</p>
-<a class="email" href="mailto:shanmukha.iit@gmail.com">shanmukha.iit@gmail.com</a>
-<div class="links" style="padding-top:0">
-<a href="https://www.linkedin.com/in/tejajuttu/">LinkedIn</a>
-<a href="https://github.com/tejajuttu">GitHub</a>
-</div>
-</div>
-</section>
+  <section class="home-hero wrap" aria-labelledby="intro">
+    <div class="hero-copy">
+      <p class="role">Lead Forward Deployed Engineer at <a href="https://eliza.com">Eliza</a></p>
+      <h1 id="intro">Building AI with the people who use it.</h1>
+      <p class="hero-intro">I’m Teja. I work with teams on AI architecture, engineering, and delivery.</p>
+      <div class="hero-links"><a class="button" href="#work">See my work</a><a class="subtle-link" href="#contact">Get in touch</a></div>
+    </div>
+    <figure class="hero-photo">
+      <picture><source type="image/webp" srcset="/assets/img/portrait-800.webp 800w, /assets/img/portrait-1600.webp 1600w, /assets/img/portrait-2400.webp 2400w" sizes="(max-width: 700px) calc(100vw - 40px), 440px"><img src="/assets/img/portrait-800.jpg" srcset="/assets/img/portrait-800.jpg 800w, /assets/img/portrait-1600.jpg 1600w, /assets/img/portrait-2400.jpg 2400w" sizes="(max-width: 700px) calc(100vw - 40px), 440px" width="800" height="600" alt="Teja smiling outdoors, with hills, water and a city skyline behind him" fetchpriority="high" decoding="async"></picture>
+    </figure>
+  </section>
+  <section class="home-current" aria-labelledby="current-title">
+    <div class="wrap current-layout">
+      <div><p class="section-kicker">Currently at Eliza</p><h2 id="current-title">Engineering, close to the problem.</h2></div>
+      <div class="current-copy"><p>I work alongside customers and engineers to design and build AI systems around real workflows.</p><p>I set technical direction, work through retrieval, integrations and evaluation, and support FDEs through the hard parts of a build.</p></div>
+    </div>
+  </section>
+  <section class="home-work wrap" id="work" aria-labelledby="work-title">
+    <div class="work-heading"><div><p class="section-kicker">Selected work · EY, 2023–2026</p><h2 id="work-title">A closer look at the work.</h2></div><p>AI systems built around what people need to find, understand, and do.</p></div>
+    <div class="work-list">
+      <article class="work-item"><div class="work-index">01 <span>Media &amp; entertainment</span></div><div><h3>Search inside a video, not just its title.</h3><p>I worked on scene-level semantic search that brought video understanding, audio parsing, and metadata together. Agents used that context to create highlights, summary podcasts, and articles.</p><a class="work-link" href="/work/multimodal-search/">Explore the project</a></div></article>
+      <article class="work-item" id="w2"><div class="work-index">02 <span>Energy</span></div><div><h3>Grounding agents in enterprise knowledge.</h3><p>I built agentic retrieval systems with ingestion and search layers, tool use, and guardrails to help answer subject-matter questions.</p></div></article>
+      <article class="work-item" id="w3"><div class="work-index">03 <span>Video AI</span></div><div><h3>Making video AI easier to start.</h3><p>I adapted NVIDIA’s video search blueprint into repeatable starting points for sports highlights, security alerting, and broadcast moderation.</p></div></article>
+    </div>
+    <p class="work-foot">At EY, I led teams of 4–8 developers and took MVPs through UAT.</p>
+  </section>
+  <section class="home-about" id="about" aria-labelledby="about-title">
+    <div class="wrap about-layout">
+      <div class="about-heading"><p class="section-kicker">A little about me</p><h2 id="about-title">Curious about how things work.</h2><p>My path has taken me from IIT Madras and Georgia Tech to analytics, data science, and AI engineering. Along the way, I’ve worked across media, energy, financial services, retail, and manufacturing.</p></div>
+      <div class="experience"><h3>Experience</h3><div class="experience-row"><div><strong>Eliza</strong><span>Lead Forward Deployed Engineer</span></div><span>2026–present</span></div><div class="experience-row"><div><strong>EY</strong><span>Lead AI Engineer, AI &amp; Data</span></div><span>2023–2026</span></div><div class="experience-row"><div><strong>EY</strong><span>Senior Data Scientist</span></div><span>2022–2023</span></div><p class="experience-more">Earlier: PlayerZero, Goldman Sachs, American Express, and EY. <a href="https://www.linkedin.com/in/tejajuttu/">Full experience on LinkedIn</a></p><p class="experience-more"><a href="/archive/">Explore my graduate project archive</a></p></div>
+    </div>
+  </section>
+  <section class="home-life wrap" id="notes" aria-labelledby="life-title">
+    <div class="life-heading"><div><p class="section-kicker">Outside of work</p><h2 id="life-title">A few things I enjoy.</h2></div><p>Rock climbing, snowboarding, chess, and Dota 2.</p></div>
+    <div class="life-content"><div class="life-photos">
+      <figure><picture><source type="image/webp" srcset="/assets/img/climbing-800.webp 800w, /assets/img/climbing-1600.webp 1600w, /assets/img/climbing-2400.webp 2400w" sizes="(max-width: 420px) 210px, (max-width: 700px) 43vw, 250px"><img src="/assets/img/climbing-800.jpg" srcset="/assets/img/climbing-800.jpg 800w, /assets/img/climbing-1600.jpg 1600w, /assets/img/climbing-2400.jpg 2400w" sizes="(max-width: 420px) 210px, (max-width: 700px) 43vw, 250px" width="800" height="1067" alt="Teja climbing beneath a rock overhang above a canyon" loading="lazy" decoding="async"></picture><figcaption>Climbing</figcaption></figure>
+      <figure><picture><source type="image/webp" srcset="/assets/img/snowboarding-800.webp 800w, /assets/img/snowboarding-1600.webp 1600w, /assets/img/snowboarding-2400.webp 2400w" sizes="(max-width: 420px) calc(100vw - 40px), (max-width: 700px) 55vw, 350px"><img src="/assets/img/snowboarding-800.jpg" srcset="/assets/img/snowboarding-800.jpg 800w, /assets/img/snowboarding-1600.jpg 1600w, /assets/img/snowboarding-2400.jpg 2400w" sizes="(max-width: 420px) calc(100vw - 40px), (max-width: 700px) 55vw, 350px" width="800" height="600" alt="Teja on a snowboard, with a lake and snowy mountains in the distance" loading="lazy" decoding="async"></picture><figcaption>Snowboarding</figcaption></figure>
+    </div><div class="life-chess"><h3>A small chess puzzle</h3><p>White to move and mate in one.</p><div class="board" data-board role="img" aria-label="Chess position: white king f6, white queen g6, black king h8"><span data-sq="a8"></span><span data-sq="b8" class="d"></span><span data-sq="c8"></span><span data-sq="d8" class="d"></span><span data-sq="e8"></span><span data-sq="f8" class="d"></span><span data-sq="g8"></span><span data-sq="h8" class="d">♚</span><span data-sq="a7" class="d"></span><span data-sq="b7"></span><span data-sq="c7" class="d"></span><span data-sq="d7"></span><span data-sq="e7" class="d"></span><span data-sq="f7"></span><span data-sq="g7" class="d"></span><span data-sq="h7"></span><span data-sq="a6"></span><span data-sq="b6" class="d"></span><span data-sq="c6"></span><span data-sq="d6" class="d"></span><span data-sq="e6"></span><span data-sq="f6" class="d">♔</span><span data-sq="g6">♕</span><span data-sq="h6" class="d"></span><span data-sq="a5" class="d"></span><span data-sq="b5"></span><span data-sq="c5" class="d"></span><span data-sq="d5"></span><span data-sq="e5" class="d"></span><span data-sq="f5"></span><span data-sq="g5" class="d"></span><span data-sq="h5"></span><span data-sq="a4"></span><span data-sq="b4" class="d"></span><span data-sq="c4"></span><span data-sq="d4" class="d"></span><span data-sq="e4"></span><span data-sq="f4" class="d"></span><span data-sq="g4"></span><span data-sq="h4" class="d"></span><span data-sq="a3" class="d"></span><span data-sq="b3"></span><span data-sq="c3" class="d"></span><span data-sq="d3"></span><span data-sq="e3" class="d"></span><span data-sq="f3"></span><span data-sq="g3" class="d"></span><span data-sq="h3"></span><span data-sq="a2"></span><span data-sq="b2" class="d"></span><span data-sq="c2"></span><span data-sq="d2" class="d"></span><span data-sq="e2"></span><span data-sq="f2" class="d"></span><span data-sq="g2"></span><span data-sq="h2" class="d"></span><span data-sq="a1" class="d"></span><span data-sq="b1"></span><span data-sq="c1" class="d"></span><span data-sq="d1"></span><span data-sq="e1" class="d"></span><span data-sq="f1"></span><span data-sq="g1" class="d"></span><span data-sq="h1"></span></div><button type="button" class="ghost-button" data-chess-toggle aria-expanded="false" hidden>Show the answer</button><p class="answer" data-chess-answer aria-live="polite"></p><noscript><p>Answer: Qg7#. The king on f6 protects the queen.</p></noscript></div></div>
+  </section>
+  <section class="home-contact" id="contact" aria-labelledby="contact-title"><div class="wrap contact-layout"><div><p class="section-kicker">Get in touch</p><h2 id="contact-title">Let’s talk.</h2></div><div><p>Have a project, a question, or a good chess puzzle? I’d love to hear from you.</p><a class="contact-email" href="mailto:shanmukha.iit@gmail.com">shanmukha.iit@gmail.com</a><div class="contact-social"><a href="https://www.linkedin.com/in/tejajuttu/">LinkedIn</a><a href="https://github.com/tejajuttu">GitHub</a></div></div></div></section>
 </main>
-<footer class="site-footer">
-<p>© 2026 Teja Juttu</p>
-<a href="#main">Back to top</a>
-</footer>
+<footer class="site-footer"><p>© 2026 Teja Juttu</p><a href="#main">Back to top</a></footer>
 <script src="/assets/site.js" defer></script>
 </body>
 </html>
