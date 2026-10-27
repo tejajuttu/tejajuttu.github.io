@@ -9,14 +9,14 @@ Personal site of Teja Juttu. Plain static HTML, CSS and a little JavaScript — 
 - `archive/` — grad-school projects (filterable; readable without JS)
 - `404.html` — not-found page
 - `projects.html` — redirect from the old archive URL to `/archive/`
-- `assets/site.css`, `assets/site.js` — all styling and behaviour
+- `assets/site.css`, `assets/secondary.css`, `assets/site.js` — shared styling, supporting-page layouts and behaviour
 - `assets/fonts/` — Bricolage Grotesque and Source Serif 4 (SIL Open Font License, see LICENSE files)
 - `assets/img/` — photos
 - `social-card.png` — link preview image (1200×630)
 
 ## Edit
 
-Edit the HTML directly. Text lives in the pages; layout lives in `assets/site.css`.
+Edit the HTML directly. Text lives in the pages; shared layout lives in `assets/site.css`, with supporting-page adjustments in `assets/secondary.css`.
 To add a project page, copy `work/multimodal-search/index.html` into a new folder under `work/`, change the text, link to it from the home page, and add it to `sitemap.xml`.
 
 ## Preview locally

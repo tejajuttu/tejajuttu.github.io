@@ -1,0 +1,129 @@
+/* Supporting pages: layouts stay independent of the home page. */
+.archive-head {
+  display: block;
+}
+.archive-head .crumbs {
+  margin-bottom: 18px;
+}
+.archive-head .text {
+  max-width: 780px;
+}
+.projects li {
+  grid-template-columns: minmax(180px, 0.9fr) minmax(0, 1.7fr) minmax(110px, 0.55fr);
+  align-items: start;
+}
+.projects li > .project-trail {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  grid-column: auto;
+}
+.projects .project-trail a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0;
+}
+.project-process {
+  margin: 0 var(--gutter);
+  padding: 32px;
+  border-radius: 10px;
+  background: var(--panel);
+}
+.project-process figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 24px;
+  font-family: var(--sans);
+}
+.project-process figcaption b {
+  font-size: 20px;
+}
+.project-process figcaption span {
+  font-family: var(--serif);
+  font-size: 16px;
+  font-style: italic;
+  color: var(--muted);
+}
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 28px;
+  margin: 28px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.process-steps li {
+  border-top: 2px solid var(--ink);
+  padding-top: 12px;
+}
+.process-steps strong {
+  font: 600 17px/1.3 var(--sans);
+}
+.process-steps p {
+  margin-top: 8px;
+  font-size: 17px;
+  line-height: 1.45;
+}
+.missing-page {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+.missing-page .missing {
+  flex: 1 0 auto;
+}
+.missing-page .site-footer {
+  margin-top: auto;
+}
+
+@media (max-width: 900px) {
+  .projects li {
+    grid-template-columns: minmax(150px, 0.8fr) minmax(0, 1.6fr);
+  }
+  .projects li > .project-trail {
+    grid-column: 2;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 8px 20px;
+  }
+  .process-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 760px) {
+  .projects li {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+    padding: 20px 0;
+  }
+  .projects li > div:first-child,
+  .projects li > .body,
+  .projects li > .project-trail {
+    grid-column: 1;
+  }
+  .project-meta {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px 20px;
+  }
+  .project-meta > div:first-child {
+    grid-column: 1 / -1;
+  }
+  .project-process {
+    padding: 22px 20px;
+  }
+  .project-process figcaption span {
+    font-size: 15px;
+  }
+  .process-steps {
+    gap: 20px;
+    margin-top: 22px;
+  }
+  .process-steps strong,
+  .process-steps p {
+    font-size: 16px;
+  }
+}
