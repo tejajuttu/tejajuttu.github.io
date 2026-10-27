@@ -19,6 +19,7 @@
 <link rel="preload" href="/assets/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/secondary.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -33,55 +34,38 @@
 </header>
 <main id="main">
 <div class="page-head">
-<p class="crumbs"><a href="/#work">Work</a><span aria-hidden="true">/</span>EY, 2023 – 2026</p>
+<p class="crumbs"><a href="/#work">Work</a><span aria-hidden="true">/</span>EY · AI &amp; Data</p>
 <h1>Scene-level search for video libraries</h1>
-<p class="lede">A media library is searchable only by what someone typed into its metadata. We made the footage itself searchable — by what’s on screen and what’s said — and used the result to drive new content.</p>
+<p class="lede">At EY, I worked on scene-level semantic search that combined video understanding, audio parsing and metadata enrichment. Downstream agents used the content to create highlights, podcasts and articles.</p>
 <dl class="project-meta">
-<div><dt>Where</dt><dd>EY, AI &amp; Data practice, for a media &amp; entertainment client</dd></div>
-<div><dt>When</dt><dd>2023 – 2026</dd></div>
+<div><dt>Where</dt><dd>EY, AI &amp; Data</dd></div>
+<div><dt>EY role tenure</dt><dd>2023 – 2026</dd></div>
 <div><dt>My role</dt><dd>Lead AI Engineer</dd></div>
 </dl>
 </div>
 
-<figure class="big-diagram" aria-labelledby="bd-cap">
-<figcaption><b id="bd-cap">How a clip becomes searchable</b><span class="note">Sketch of the approach, not a client system.</span></figcaption>
-<div class="big-flow">
-<div class="box">Video library<small>footage, broadcasts, clips</small></div>
-<div class="link" aria-hidden="true"></div>
-<div class="stack bracket">
-<div class="box">Scenes &amp; shots<small>video understanding: what’s on screen</small></div>
-<div class="box">Speech &amp; sound<small>audio parsing: what’s said and heard</small></div>
-<div class="box">Titles, people, tags<small>metadata enrichment: what it is</small></div>
-</div>
-<div class="link" aria-hidden="true"></div>
-<div class="box dark">One scene-level index<small>signals aligned on one timeline</small></div>
-<div class="link" aria-hidden="true"></div>
-<div class="stack bracket-left">
-<div class="box">Search<small>“the goal in the second half” returns the moment, not the file</small></div>
-<div class="box">Content agents<small>resized highlights for social, summary podcasts, articles</small></div>
-</div>
-</div>
+<figure class="project-process" aria-labelledby="bd-cap">
+<figcaption><b id="bd-cap">How a clip becomes searchable</b><span>Conceptual overview, not a client system.</span></figcaption>
+<ol class="process-steps">
+<li><strong>Media content</strong><p>Video and audio</p></li>
+<li><strong>Understand</strong><p>Video understanding, audio parsing and metadata enrichment.</p></li>
+<li><strong>Scene-level search</strong><p>Semantic search across media content.</p></li>
+<li><strong>Downstream agents</strong><p>Highlights, summary podcasts and articles.</p></li>
+</ol>
 </figure>
 
 <article class="prose">
 <section aria-labelledby="p1">
-<h2 id="p1">The problem</h2>
+<h2 id="p1">The work</h2>
 <div class="text">
-<p>Media companies sit on large video libraries, but finding a specific moment usually means knowing the right file and scrubbing through it. Metadata describes the asset, not what happens inside it — so most of the footage is effectively invisible to search.</p>
-<p>The aim was to make that content usable again: find a scene by describing it, then turn what you find into something new.</p>
+<p>At EY, I worked on multimodal media intelligence. Video understanding, audio parsing and metadata enrichment made scene-level semantic search possible.</p>
+<p>Downstream agents made highlights for social media, summary podcasts and articles.</p>
 </div>
 </section>
 <section aria-labelledby="p2">
-<h2 id="p2">What I built</h2>
+<h2 id="p2">Related work</h2>
 <div class="text">
-<p>Three extraction paths run over each piece of content: video understanding to describe scenes and shots, audio parsing to capture speech and sound, and metadata enrichment to attach titles, people and tags. Their output is combined into a single index at the level of a scene, so a query lands on a moment rather than a file.</p>
-<p>On top of that index sit agents that turn search results into new content: resized highlights for social media, summary podcasts and articles.</p>
-</div>
-</section>
-<section aria-labelledby="p3">
-<h2 id="p3">The hard part</h2>
-<div class="text">
-<p>Each signal arrives at a different grain — speech by the word, shots by the frame, metadata by the asset. Getting them onto one timeline, and deciding what counts as a “scene,” is where most of the design decisions live.</p>
+<p>I also adapted NVIDIA’s video search blueprint into repeatable starting points for sports highlights, corporate security alerting and broadcast moderation.</p>
 </div>
 </section>
 </article>

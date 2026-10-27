@@ -13,7 +13,7 @@ const SHOTS = process.env.SHOTS_DIR || "";
 if (SHOTS) mkdirSync(SHOTS, { recursive: true });
 
 const pages = ["/", "/work/multimodal-search/", "/archive/", "/404.html"];
-const viewports = [["desktop", 1440, 900], ["tablet", 820, 1180], ["phone", 390, 844], ["small", 320, 640]];
+const viewports = [["desktop", 1440, 900], ["laptop", 1024, 900], ["tablet", 768, 1024], ["phone", 390, 844], ["small", 320, 640]];
 const failures = [];
 const fail = (m) => { failures.push(m); console.log("  FAIL " + m); };
 const ok = (m) => console.log("  ok   " + m);
@@ -85,6 +85,17 @@ for (const path of pages) {
   await page.click('[data-filter="viz"]');
   const visible = await page.$$eval("[data-cat]", (li) => li.filter((x) => !x.hidden).length);
   visible === 7 ? ok("archive filter works (7 visualization projects)") : fail(`archive filter shows ${visible}`);
+  // The archive metadata and link should remain within their own project row at laptop width.
+  await page.setViewportSize({ width: 1024, height: 900 });
+  await page.click('[data-filter="all"]');
+  const archiveLink = await page.locator('.projects li').filter({ hasText: 'Predicting game success' }).evaluate((row) => {
+    const link = row.querySelector('a');
+    const rowBox = row.getBoundingClientRect();
+    const titleBox = row.querySelector('h2').getBoundingClientRect();
+    const linkBox = link.getBoundingClientRect();
+    return { contained: row.contains(link), within: linkBox.top >= rowBox.top && linkBox.bottom <= rowBox.bottom, topDifference: Math.abs(linkBox.top - titleBox.top) };
+  });
+  archiveLink.contained && archiveLink.within && archiveLink.topDifference < 55 ? ok("archive project link aligned at laptop width") : fail("archive project link is displaced at laptop width");
   // Old URL redirects
   await page.goto(BASE + "/projects.html");
   await page.waitForURL("**/archive/", { timeout: 5000 }).catch(() => {});
