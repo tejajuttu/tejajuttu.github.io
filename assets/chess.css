@@ -1,0 +1,18 @@
+/* Local vector pieces keep the puzzle legible across platforms. The square
+   text remains in the DOM for the existing move behavior and text fallback. */
+.board [data-sq="h8"]:not(:empty),
+.board [data-sq="f6"]:not(:empty),
+.board [data-sq="g6"]:not(:empty),
+.board [data-sq="g7"]:not(:empty) {
+  font-size: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 88% 88%;
+}
+.board [data-sq="h8"]:not(:empty) { background-image: url("/assets/chess/black-king.svg"); }
+.board [data-sq="f6"]:not(:empty) { background-image: url("/assets/chess/white-king.svg"); }
+.board [data-sq="g6"]:not(:empty),
+.board [data-sq="g7"]:not(:empty) { background-image: url("/assets/chess/white-queen.svg"); }
+@media (forced-colors: active) {
+  .board [data-sq]:not(:empty) { background-image: none; font-size: 26px; color: CanvasText; }
+}
