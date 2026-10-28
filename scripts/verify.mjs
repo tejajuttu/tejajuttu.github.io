@@ -29,6 +29,22 @@ for (const path of pages) {
     const res = await page.goto(BASE + path, { waitUntil: "networkidle" });
     const label = `${path} @${name}`;
     if (!res || (res.status() >= 400 && path !== "/404.html")) fail(`${label} status ${res && res.status()}`);
+    // Scroll normally to trigger lazy photos and verify real image decoding.
+    const images = page.locator("img");
+    for (let i = 0; i < await images.count(); i++) {
+      const img = images.nth(i);
+      try {
+        await img.scrollIntoViewIfNeeded();
+        await img.evaluate(async (element) => {
+          await element.decode();
+          if (!element.naturalWidth || !element.naturalHeight) throw new Error("empty image");
+        });
+      } catch (error) {
+        fail(`${label} image failed: ${await img.getAttribute("src")} (${error.message})`);
+      }
+    }
+    if (await images.count()) ok(`${label} photos decoded after scrolling`);
+    await page.evaluate(() => window.scrollTo({ top: 0, behavior: "instant" }));
     const m = await page.evaluate(() => {
       const small = [...document.querySelectorAll("body *")].filter((e) => {
         const cs = getComputedStyle(e);
